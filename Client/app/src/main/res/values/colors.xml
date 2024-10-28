@@ -2,5 +2,30 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="offWhite">#d6d6d6</color>
+
+    <!-- Primary Colors -->
     <color name="primaryColor">#1A71BD</color>
+    <color name="primaryLight">#63A1E1</color>
+    <color name="primaryDark">#144A7A</color>
+
+    <!-- Accent Color (Friendly and vibrant) -->
+    <color name="accentColor">#FF9800</color> <!-- A bright orange for highlights -->
+
+    <!-- Secondary Colors (for backgrounds and secondary elements) -->
+    <color name="secondaryColor">#F5F5F5</color> <!-- Light gray for backgrounds -->
+    <color name="secondaryDark">#E0E0E0</color> <!-- Slightly darker gray -->
+    <color name="secondaryText">#757575</color> <!-- Medium gray for secondary text -->
+
+    <!-- Error Color -->
+    <color name="errorColor">#D32F2F</color> <!-- Red for error states -->
+
+    <!-- Success Color -->
+    <color name="successColor">#388E3C</color> <!-- Green for success messages -->
+
+    <!-- Background Colors -->
+    <color name="backgroundLight">#FFFFFF</color>
+    <color name="backgroundDark">#121212</color> <!-- Dark theme background -->
+
+    <color name="facebookBlue">#3b5998</color>
 </resources>
