@@ -1,15 +1,25 @@
+using Server.Repositories;
+using Server.Services;
+using Npgsql;
+
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
+// Add services
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddScoped<Npgsql.NpgsqlConnection>(provider =>
+{
+    var connectionString = builder.Configuration.GetConnectionString("Supabase");
+    return new Npgsql.NpgsqlConnection(connectionString);
+});
+builder.Services.AddScoped<UserRepository>();
+builder.Services.AddHttpClient<SupabaseService>();
+
+// Add Swagger services
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Configure middleware
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -17,9 +27,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

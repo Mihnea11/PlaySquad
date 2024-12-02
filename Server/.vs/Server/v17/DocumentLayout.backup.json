@@ -1,12 +1,122 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Master\\Android App Development\\Play Squad\\Server\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\models\\usermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Server\\Properties\\launchSettings.json",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-24T20:24:20.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\appsettings.json",
+              "RelativeDocumentMoniker": "Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\appsettings.json",
+              "RelativeToolTip": "Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-11-24T20:15:20.419Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "Server\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "Server\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T18:55:25.326Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\UsersController.cs",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "Server\\Controllers\\UsersController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T18:54:19.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-16T21:33:50.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "UserModel.cs",
+              "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Models\\UserModel.cs",
+              "RelativeDocumentMoniker": "Server\\Models\\UserModel.cs",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Models\\UserModel.cs",
+              "RelativeToolTip": "Server\\Models\\UserModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-24T18:55:38.691Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
