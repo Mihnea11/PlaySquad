@@ -1,17 +1,22 @@
 using Server.Repositories;
-using Server.Services;
 using Npgsql;
+using System.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
 // Add services
 builder.Services.AddControllers();
-builder.Services.AddScoped<Npgsql.NpgsqlConnection>(provider =>
+builder.Services.AddScoped<IDbConnection>(provider =>
 {
     var connectionString = builder.Configuration.GetConnectionString("Supabase");
-    return new Npgsql.NpgsqlConnection(connectionString);
+    return new NpgsqlConnection(connectionString);
 });
 builder.Services.AddScoped<UserRepository>();
-builder.Services.AddHttpClient<SupabaseService>();
+builder.Services.AddScoped<RoleRepository>();
+builder.Services.AddScoped<UsersRolesRepository>();
+builder.Services.AddScoped<ArenaRepository>();
+builder.Services.AddScoped<GameRepository>();
+builder.Services.AddScoped<GameUserRepository>();
 
 // Add Swagger services
 builder.Services.AddEndpointsApiExplorer();

@@ -1,6 +1,110 @@
 [
   {
-    "ContainingType": "Server.Controllers.UsersController",
+    "ContainingType": "ArenasController",
+    "Method": "GetArenas",
+    "RelativePath": "api/Arenas",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "ArenasController",
+    "Method": "AddArena",
+    "RelativePath": "api/Arenas",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "arena",
+        "Type": "Server.Models.Arena",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GamesController",
+    "Method": "GetGames",
+    "RelativePath": "api/Games",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GamesController",
+    "Method": "AddGame",
+    "RelativePath": "api/Games",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "game",
+        "Type": "Server.Models.Game",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GameUsersController",
+    "Method": "GetGameUsers",
+    "RelativePath": "api/GameUsers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "GameUsersController",
+    "Method": "AddGameUser",
+    "RelativePath": "api/GameUsers",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameUser",
+        "Type": "Server.Models.GamesUsers",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RolesController",
+    "Method": "GetRoles",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "RolesController",
+    "Method": "AddRole",
+    "RelativePath": "api/Roles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "role",
+        "Type": "Server.Models.Role",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsersController",
     "Method": "GetUsers",
     "RelativePath": "api/Users",
     "HttpMethod": "GET",
@@ -10,7 +114,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.UsersController",
+    "ContainingType": "UsersController",
     "Method": "AddUser",
     "RelativePath": "api/Users",
     "HttpMethod": "POST",
@@ -20,6 +124,32 @@
       {
         "Name": "user",
         "Type": "Server.Models.User",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsersRolesController",
+    "Method": "GetUsersRoles",
+    "RelativePath": "api/UsersRoles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UsersRolesController",
+    "Method": "AddUsersRoles",
+    "RelativePath": "api/UsersRoles",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usersRoles",
+        "Type": "Server.Models.UsersRoles",
         "IsRequired": true
       }
     ],

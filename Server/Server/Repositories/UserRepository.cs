@@ -1,26 +1,15 @@
-﻿using Dapper;
-using Server.Models;
+﻿using Server.Models;
+using System.Data;
 namespace Server.Repositories
 {
-    public class UserRepository
+    public class UserRepository : BaseRepository<User>
     {
-        private readonly Npgsql.NpgsqlConnection _connection;
-
-        public UserRepository(Npgsql.NpgsqlConnection connection)
-        {
-            _connection = connection;
-        }
-
-        public async Task<IEnumerable<User>> GetUsersAsync()
-        {
-            var query = "SELECT * FROM \"Users\"";
-            return await _connection.QueryAsync<User>(query);
-        }
+        public UserRepository(IDbConnection connection) : base(connection) { }
 
         public async Task<int> AddUserAsync(User user)
         {
-            var query = "INSERT INTO \"Users\" (name) VALUES (@name)";
-            return await _connection.ExecuteAsync(query, user);
+            var query = "INSERT INTO \"Users\" (name, email, password, age, city) VALUES (@Name, @Email, @Password, @Age, @City)";
+            return await AddAsync(query, user);
         }
     }
 
