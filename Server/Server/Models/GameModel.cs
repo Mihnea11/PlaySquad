@@ -1,5 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System;
+using System.Collections.Generic;
 
 namespace Server.Models
 {
@@ -8,15 +9,23 @@ namespace Server.Models
         [Key]
         public int Id { get; set; }
 
+        [Required]
+        [MaxLength(255)]
         public string Type { get; set; }
-        public DateTime Start { get; set; }
-        public DateTime End { get; set; }
 
-        [ForeignKey("Arena")]
+        public DateTime StartTime { get; set; }
+
+        public DateTime EndTime { get; set; }
+
+        // Foreign Key for Arena
         public int ArenaId { get; set; }
         public Arena Arena { get; set; }
 
         public int GoalsTeamA { get; set; }
+
         public int GoalsTeamB { get; set; }
+
+        // Navigation property for many-to-many relationship with Users
+        public ICollection<User> Users { get; set; }
     }
 }

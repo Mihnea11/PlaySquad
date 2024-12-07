@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Server.Models
 {
@@ -10,5 +11,8 @@ namespace Server.Models
         [Required]
         [MaxLength(255)]
         public string Name { get; set; }
+
+        // Navigation property for many-to-many relationship with Users
+        public ICollection<User> Users { get; set; }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Server.Models
 {
@@ -22,6 +23,11 @@ namespace Server.Models
 
         [MaxLength(255)]
         public string City { get; set; }
+
+        // Navigation property for many-to-many relationship with Roles
+        public ICollection<Role> Roles { get; set; }
+
+        // Navigation property for many-to-many relationship with Games
+        public ICollection<Game> Games { get; set; }
     }
 }
-

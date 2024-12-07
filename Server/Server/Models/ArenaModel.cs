@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
 
 namespace Server.Models
 {
@@ -11,16 +12,17 @@ namespace Server.Models
         [MaxLength(255)]
         public string Name { get; set; }
 
-        public string City { get; set; }
-
         public string Address { get; set; }
 
-        public int OwnerId { get; set; }
-
         public int MinPlayers { get; set; }
+
         public int MaxPlayers { get; set; }
-        public string Description { get; set; }
+
         public string Type { get; set; }
-        public float Price { get; set; }
+
+        public decimal Price { get; set; }
+
+        // Navigation property to the Games in this Arena
+        public ICollection<Game> Games { get; set; }
     }
 }

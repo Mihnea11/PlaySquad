@@ -1,8 +1,8 @@
 [
   {
-    "ContainingType": "ArenasController",
-    "Method": "GetArenas",
-    "RelativePath": "api/Arenas",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/arenas",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -10,15 +10,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "ArenasController",
-    "Method": "AddArena",
-    "RelativePath": "api/Arenas",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/arenas",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "arena",
+        "Name": "entity",
         "Type": "Server.Models.Arena",
         "IsRequired": true
       }
@@ -26,9 +26,62 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GamesController",
-    "Method": "GetGames",
-    "RelativePath": "api/Games",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/arenas/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Patch",
+    "RelativePath": "api/arenas/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patchDoc",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/arenas/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/games",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -36,15 +89,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GamesController",
-    "Method": "AddGame",
-    "RelativePath": "api/Games",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/games",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "game",
+        "Name": "entity",
         "Type": "Server.Models.Game",
         "IsRequired": true
       }
@@ -52,35 +105,62 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "GameUsersController",
-    "Method": "GetGameUsers",
-    "RelativePath": "api/GameUsers",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/games/{id}",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "GameUsersController",
-    "Method": "AddGameUser",
-    "RelativePath": "api/GameUsers",
-    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "gameUser",
-        "Type": "Server.Models.GamesUsers",
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RolesController",
-    "Method": "GetRoles",
-    "RelativePath": "api/Roles",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Patch",
+    "RelativePath": "api/games/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patchDoc",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/games/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/roles",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -88,15 +168,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "RolesController",
-    "Method": "AddRole",
-    "RelativePath": "api/Roles",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/roles",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "role",
+        "Name": "entity",
         "Type": "Server.Models.Role",
         "IsRequired": true
       }
@@ -104,9 +184,62 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "UsersController",
-    "Method": "GetUsers",
-    "RelativePath": "api/Users",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/roles/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Patch",
+    "RelativePath": "api/roles/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patchDoc",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/roles/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetAll",
+    "RelativePath": "api/users",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -114,15 +247,15 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "UsersController",
-    "Method": "AddUser",
-    "RelativePath": "api/Users",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Create",
+    "RelativePath": "api/users",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "user",
+        "Name": "entity",
         "Type": "Server.Models.User",
         "IsRequired": true
       }
@@ -130,26 +263,53 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "UsersRolesController",
-    "Method": "GetUsersRoles",
-    "RelativePath": "api/UsersRoles",
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "GetById",
+    "RelativePath": "api/users/{id}",
     "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "UsersRolesController",
-    "Method": "AddUsersRoles",
-    "RelativePath": "api/UsersRoles",
-    "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "usersRoles",
-        "Type": "Server.Models.UsersRoles",
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Patch",
+    "RelativePath": "api/users/{id}",
+    "HttpMethod": "PATCH",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "patchDoc",
+        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+    "Method": "Delete",
+    "RelativePath": "api/users/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
