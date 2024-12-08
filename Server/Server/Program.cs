@@ -4,9 +4,9 @@ using Server.Data;
 using Server.Repositories;
 using Server.Repositories.Interfaces;
 using Server.Services;
-using Server.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc.NewtonsoftJson;
 using AutoMapper;
+using Server;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -26,6 +26,7 @@ builder.Services.AddScoped<IGameService, GameService>();
 builder.Services.AddScoped<IArenaService, ArenaService>();
 builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddControllers().AddNewtonsoftJson();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

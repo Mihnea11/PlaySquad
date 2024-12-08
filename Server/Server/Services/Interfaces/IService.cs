@@ -1,18 +1,17 @@
-﻿using Server.Models;
+﻿//using System.Collections.Generic;
+//using System.Threading.Tasks;
 
-namespace Server.Services.Interfaces
-{
-    public interface IBaseService<TEntity> where TEntity : class
-    {
-        Task<IEnumerable<TEntity>> GetAllAsync();
-        Task<TEntity?> GetByIdAsync(int id);
-        Task<TEntity> AddAsync(TEntity entity);
-        Task<TEntity> UpdateAsync(TEntity entity);
-        Task<bool> DeleteAsync(int id);
-    }
-
-    public interface IUserService : IBaseService<User> { }
-    public interface IGameService : IBaseService<Game> { }
-    public interface IArenaService : IBaseService<Arena> { }
-    public interface IRoleService : IBaseService<Role> { }
-}
+//namespace Server.Services.Interfaces
+//{
+//    public interface IBaseService<TEntity, TDTO, TCreateDTO>
+//        where TEntity : class
+//        where TDTO : class
+//        where TCreateDTO : class
+//    {
+//        Task<IEnumerable<TDTO>> GetAllAsync();
+//        Task<TDTO?> GetByIdAsync(int id);
+//        Task<TDTO> AddAsync(TCreateDTO createDto);
+//        Task<TDTO> UpdateAsync(int id, TCreateDTO updateDto);
+//        Task<bool> DeleteAsync(int id);
+//    }
+//}

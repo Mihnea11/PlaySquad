@@ -8,7 +8,7 @@
     "/api/arenas": {
       "get": {
         "tags": [
-          "Arenas"
+          "Arena"
         ],
         "responses": {
           "200": {
@@ -18,28 +18,28 @@
       },
       "post": {
         "tags": [
-          "Arenas"
+          "Arena"
         ],
         "requestBody": {
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/Arena"
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Arena"
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Arena"
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Arena"
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             }
           }
@@ -54,7 +54,7 @@
     "/api/arenas/{id}": {
       "get": {
         "tags": [
-          "Arenas"
+          "Arena"
         ],
         "parameters": [
           {
@@ -73,9 +73,9 @@
           }
         }
       },
-      "patch": {
+      "put": {
         "tags": [
-          "Arenas"
+          "Arena"
         ],
         "parameters": [
           {
@@ -92,34 +92,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/ArenaCreateDTO"
               }
             }
           }
@@ -132,7 +120,7 @@
       },
       "delete": {
         "tags": [
-          "Arenas"
+          "Arena"
         ],
         "parameters": [
           {
@@ -155,7 +143,7 @@
     "/api/games": {
       "get": {
         "tags": [
-          "Games"
+          "Game"
         ],
         "responses": {
           "200": {
@@ -165,28 +153,28 @@
       },
       "post": {
         "tags": [
-          "Games"
+          "Game"
         ],
         "requestBody": {
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/Game"
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Game"
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Game"
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Game"
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             }
           }
@@ -201,7 +189,7 @@
     "/api/games/{id}": {
       "get": {
         "tags": [
-          "Games"
+          "Game"
         ],
         "parameters": [
           {
@@ -220,9 +208,9 @@
           }
         }
       },
-      "patch": {
+      "put": {
         "tags": [
-          "Games"
+          "Game"
         ],
         "parameters": [
           {
@@ -239,34 +227,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/GameCreateDTO"
               }
             }
           }
@@ -279,11 +255,96 @@
       },
       "delete": {
         "tags": [
-          "Games"
+          "Game"
         ],
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/games/user/{userId}": {
+      "get": {
+        "tags": [
+          "Game"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/games/{gameId}/users/{userId}": {
+      "post": {
+        "tags": [
+          "GameUser"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "GameUser"
+        ],
+        "parameters": [
+          {
+            "name": "gameId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "userId",
             "in": "path",
             "required": true,
             "schema": {
@@ -302,7 +363,7 @@
     "/api/roles": {
       "get": {
         "tags": [
-          "Roles"
+          "Role"
         ],
         "responses": {
           "200": {
@@ -312,28 +373,28 @@
       },
       "post": {
         "tags": [
-          "Roles"
+          "Role"
         ],
         "requestBody": {
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/Role"
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Role"
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/Role"
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/Role"
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             }
           }
@@ -348,7 +409,7 @@
     "/api/roles/{id}": {
       "get": {
         "tags": [
-          "Roles"
+          "Role"
         ],
         "parameters": [
           {
@@ -367,9 +428,9 @@
           }
         }
       },
-      "patch": {
+      "put": {
         "tags": [
-          "Roles"
+          "Role"
         ],
         "parameters": [
           {
@@ -386,34 +447,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/RoleCreateDTO"
               }
             }
           }
@@ -426,7 +475,7 @@
       },
       "delete": {
         "tags": [
-          "Roles"
+          "Role"
         ],
         "parameters": [
           {
@@ -449,7 +498,7 @@
     "/api/users": {
       "get": {
         "tags": [
-          "Users"
+          "User"
         ],
         "responses": {
           "200": {
@@ -459,28 +508,28 @@
       },
       "post": {
         "tags": [
-          "Users"
+          "User"
         ],
         "requestBody": {
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/User"
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             }
           }
@@ -495,7 +544,7 @@
     "/api/users/{id}": {
       "get": {
         "tags": [
-          "Users"
+          "User"
         ],
         "parameters": [
           {
@@ -514,9 +563,9 @@
           }
         }
       },
-      "patch": {
+      "put": {
         "tags": [
-          "Users"
+          "User"
         ],
         "parameters": [
           {
@@ -533,34 +582,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             },
             "application/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             },
             "text/json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "type": "array",
-                "items": {
-                  "$ref": "#/components/schemas/Operation"
-                }
+                "$ref": "#/components/schemas/UserCreateDTO"
               }
             }
           }
@@ -573,11 +610,73 @@
       },
       "delete": {
         "tags": [
-          "Users"
+          "User"
         ],
         "parameters": [
           {
             "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/users/{userId}/roles/{roleId}": {
+      "post": {
+        "tags": [
+          "UserRole"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "roleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "UserRole"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "roleId",
             "in": "path",
             "required": true,
             "schema": {
@@ -596,20 +695,12 @@
   },
   "components": {
     "schemas": {
-      "Arena": {
-        "required": [
-          "name"
-        ],
+      "ArenaCreateDTO": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "address": {
             "type": "string",
@@ -630,31 +721,16 @@
           "price": {
             "type": "number",
             "format": "double"
-          },
-          "games": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Game"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Game": {
-        "required": [
-          "type"
-        ],
+      "GameCreateDTO": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "type": {
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "startTime": {
             "type": "string",
@@ -667,137 +743,41 @@
           "arenaId": {
             "type": "integer",
             "format": "int32"
-          },
-          "arena": {
-            "$ref": "#/components/schemas/Arena"
-          },
-          "goalsTeamA": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "goalsTeamB": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/User"
-            },
-            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "Operation": {
+      "RoleCreateDTO": {
         "type": "object",
         "properties": {
-          "operationType": {
-            "$ref": "#/components/schemas/OperationType"
-          },
-          "path": {
-            "type": "string",
-            "nullable": true
-          },
-          "op": {
-            "type": "string",
-            "nullable": true
-          },
-          "from": {
-            "type": "string",
-            "nullable": true
-          },
-          "value": {
-            "nullable": true
-          }
-        },
-        "additionalProperties": false
-      },
-      "OperationType": {
-        "enum": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6
-        ],
-        "type": "integer",
-        "format": "int32"
-      },
-      "Role": {
-        "required": [
-          "name"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
-          },
-          "users": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/User"
-            },
+            "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "User": {
-        "required": [
-          "email",
-          "name",
-          "password"
-        ],
+      "UserCreateDTO": {
         "type": "object",
         "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
           "name": {
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "email": {
-            "maxLength": 255,
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "password": {
-            "minLength": 1,
-            "type": "string"
+            "type": "string",
+            "nullable": true
           },
           "age": {
             "type": "integer",
             "format": "int32"
           },
           "city": {
-            "maxLength": 255,
             "type": "string",
-            "nullable": true
-          },
-          "roles": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Role"
-            },
-            "nullable": true
-          },
-          "games": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Game"
-            },
             "nullable": true
           }
         },

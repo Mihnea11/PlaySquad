@@ -141,7 +141,7 @@ C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\bin\Debug\net8.0\zh-Hans\M
 C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\bin\Debug\net8.0\AutoMapper.dll
-C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\bin\Debug\net8.0\Microsoft.AspNetCore.JsonPatch.dll
 C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\bin\Debug\net8.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\bin\Debug\net8.0\Newtonsoft.Json.Bson.dll
+C:\Users\boanc\StudioProjects\PlaySquad\Server\Server\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

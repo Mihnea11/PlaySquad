@@ -1,7 +1,7 @@
 [
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetAll",
+    "ContainingType": "Server.Controllers.ArenaController",
+    "Method": "GetAllArenas",
     "RelativePath": "api/arenas",
     "HttpMethod": "GET",
     "IsController": true,
@@ -10,24 +10,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Create",
+    "ContainingType": "Server.Controllers.ArenaController",
+    "Method": "CreateArena",
     "RelativePath": "api/arenas",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "entity",
-        "Type": "Server.Models.Arena",
+        "Name": "arenaCreateDTO",
+        "Type": "Server.DTOs.ArenaCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetById",
+    "ContainingType": "Server.Controllers.ArenaController",
+    "Method": "GetArenaById",
     "RelativePath": "api/arenas/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -42,10 +42,10 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Patch",
+    "ContainingType": "Server.Controllers.ArenaController",
+    "Method": "UpdateArena",
     "RelativePath": "api/arenas/{id}",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -55,16 +55,16 @@
         "IsRequired": true
       },
       {
-        "Name": "patchDoc",
-        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "Name": "updateDto",
+        "Type": "Server.DTOs.ArenaCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Arena, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "ContainingType": "Server.Controllers.ArenaController",
+    "Method": "DeleteArena",
     "RelativePath": "api/arenas/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -79,8 +79,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetAll",
+    "ContainingType": "Server.Controllers.GameController",
+    "Method": "GetAllGames",
     "RelativePath": "api/games",
     "HttpMethod": "GET",
     "IsController": true,
@@ -89,24 +89,66 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Create",
+    "ContainingType": "Server.Controllers.GameController",
+    "Method": "CreateGame",
     "RelativePath": "api/games",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "entity",
-        "Type": "Server.Models.Game",
+        "Name": "gameCreateDTO",
+        "Type": "Server.DTOs.GameCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetById",
+    "ContainingType": "Server.Controllers.GameUserController",
+    "Method": "AddUserToGame",
+    "RelativePath": "api/games/{gameId}/users/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.GameUserController",
+    "Method": "RemoveUserFromGame",
+    "RelativePath": "api/games/{gameId}/users/{userId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "gameId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.GameController",
+    "Method": "GetGameById",
     "RelativePath": "api/games/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -121,10 +163,10 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Patch",
+    "ContainingType": "Server.Controllers.GameController",
+    "Method": "UpdateGame",
     "RelativePath": "api/games/{id}",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -134,16 +176,16 @@
         "IsRequired": true
       },
       {
-        "Name": "patchDoc",
-        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "Name": "updateDto",
+        "Type": "Server.DTOs.GameCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Game, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "ContainingType": "Server.Controllers.GameController",
+    "Method": "DeleteGame",
     "RelativePath": "api/games/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -158,8 +200,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetAll",
+    "ContainingType": "Server.Controllers.GameController",
+    "Method": "GetGamesByUserId",
+    "RelativePath": "api/games/user/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.RoleController",
+    "Method": "GetAllRoles",
     "RelativePath": "api/roles",
     "HttpMethod": "GET",
     "IsController": true,
@@ -168,24 +226,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Create",
+    "ContainingType": "Server.Controllers.RoleController",
+    "Method": "CreateRole",
     "RelativePath": "api/roles",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "entity",
-        "Type": "Server.Models.Role",
+        "Name": "roleCreateDTO",
+        "Type": "Server.DTOs.RoleCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetById",
+    "ContainingType": "Server.Controllers.RoleController",
+    "Method": "GetRoleById",
     "RelativePath": "api/roles/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -200,10 +258,10 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Patch",
+    "ContainingType": "Server.Controllers.RoleController",
+    "Method": "UpdateRole",
     "RelativePath": "api/roles/{id}",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -213,16 +271,16 @@
         "IsRequired": true
       },
       {
-        "Name": "patchDoc",
-        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "Name": "updateDto",
+        "Type": "Server.DTOs.RoleCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.Role, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "ContainingType": "Server.Controllers.RoleController",
+    "Method": "DeleteRole",
     "RelativePath": "api/roles/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -237,8 +295,8 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetAll",
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetAllUsers",
     "RelativePath": "api/users",
     "HttpMethod": "GET",
     "IsController": true,
@@ -247,24 +305,24 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Create",
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "CreateUser",
     "RelativePath": "api/users",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "entity",
-        "Type": "Server.Models.User",
+        "Name": "userCreateDTO",
+        "Type": "Server.DTOs.UserCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "GetById",
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetUserById",
     "RelativePath": "api/users/{id}",
     "HttpMethod": "GET",
     "IsController": true,
@@ -279,10 +337,10 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Patch",
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "UpdateUser",
     "RelativePath": "api/users/{id}",
-    "HttpMethod": "PATCH",
+    "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -292,16 +350,16 @@
         "IsRequired": true
       },
       {
-        "Name": "patchDoc",
-        "Type": "Microsoft.AspNetCore.JsonPatch.Operations.Operation[]",
+        "Name": "updateDto",
+        "Type": "Server.DTOs.UserCreateDTO",
         "IsRequired": true
       }
     ],
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.BaseController\u00601[[Server.Models.User, Server, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
-    "Method": "Delete",
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "DeleteUser",
     "RelativePath": "api/users/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
@@ -309,6 +367,48 @@
     "Parameters": [
       {
         "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserRoleController",
+    "Method": "AssignRoleToUser",
+    "RelativePath": "api/users/{userId}/roles/{roleId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserRoleController",
+    "Method": "RemoveRoleFromUser",
+    "RelativePath": "api/users/{userId}/roles/{roleId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "roleId",
         "Type": "System.Int32",
         "IsRequired": true
       }
