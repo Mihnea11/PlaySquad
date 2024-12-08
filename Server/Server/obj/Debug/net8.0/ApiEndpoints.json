@@ -218,7 +218,7 @@
   {
     "ContainingType": "Server.Controllers.RoleController",
     "Method": "GetAllRoles",
-    "RelativePath": "api/roles",
+    "RelativePath": "api/Role",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -228,7 +228,7 @@
   {
     "ContainingType": "Server.Controllers.RoleController",
     "Method": "CreateRole",
-    "RelativePath": "api/roles",
+    "RelativePath": "api/Role",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -244,7 +244,7 @@
   {
     "ContainingType": "Server.Controllers.RoleController",
     "Method": "GetRoleById",
-    "RelativePath": "api/roles/{id}",
+    "RelativePath": "api/Role/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -260,7 +260,7 @@
   {
     "ContainingType": "Server.Controllers.RoleController",
     "Method": "UpdateRole",
-    "RelativePath": "api/roles/{id}",
+    "RelativePath": "api/Role/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -271,7 +271,7 @@
         "IsRequired": true
       },
       {
-        "Name": "updateDto",
+        "Name": "roleUpdateDTO",
         "Type": "Server.DTOs.RoleCreateDTO",
         "IsRequired": true
       }
@@ -281,7 +281,7 @@
   {
     "ContainingType": "Server.Controllers.RoleController",
     "Method": "DeleteRole",
-    "RelativePath": "api/roles/{id}",
+    "RelativePath": "api/Role/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -296,18 +296,8 @@
   },
   {
     "ContainingType": "Server.Controllers.UserController",
-    "Method": "GetAllUsers",
-    "RelativePath": "api/users",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.UserController",
     "Method": "CreateUser",
-    "RelativePath": "api/users",
+    "RelativePath": "api/User",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -322,8 +312,18 @@
   },
   {
     "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetAllUsers",
+    "RelativePath": "api/User",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserController",
     "Method": "GetUserById",
-    "RelativePath": "api/users/{id}",
+    "RelativePath": "api/User/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -339,7 +339,7 @@
   {
     "ContainingType": "Server.Controllers.UserController",
     "Method": "UpdateUser",
-    "RelativePath": "api/users/{id}",
+    "RelativePath": "api/User/{id}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -360,7 +360,7 @@
   {
     "ContainingType": "Server.Controllers.UserController",
     "Method": "DeleteUser",
-    "RelativePath": "api/users/{id}",
+    "RelativePath": "api/User/{id}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -374,9 +374,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.UserRoleController",
+    "ContainingType": "Server.Controllers.UserController",
     "Method": "AssignRoleToUser",
-    "RelativePath": "api/users/{userId}/roles/{roleId}",
+    "RelativePath": "api/User/{userId}/assign-role/{roleId}",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -395,9 +395,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "Server.Controllers.UserRoleController",
+    "ContainingType": "Server.Controllers.UserController",
     "Method": "RemoveRoleFromUser",
-    "RelativePath": "api/users/{userId}/roles/{roleId}",
+    "RelativePath": "api/User/{userId}/remove-role/{roleId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -409,6 +409,22 @@
       },
       {
         "Name": "roleId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetUserRoles",
+    "RelativePath": "api/User/{userId}/roles",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": true
       }

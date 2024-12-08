@@ -360,7 +360,7 @@
         }
       }
     },
-    "/api/roles": {
+    "/api/Role": {
       "get": {
         "tags": [
           "Role"
@@ -406,7 +406,7 @@
         }
       }
     },
-    "/api/roles/{id}": {
+    "/api/Role/{id}": {
       "get": {
         "tags": [
           "Role"
@@ -495,17 +495,7 @@
         }
       }
     },
-    "/api/users": {
-      "get": {
-        "tags": [
-          "User"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
+    "/api/User": {
       "post": {
         "tags": [
           "User"
@@ -539,9 +529,19 @@
             "description": "OK"
           }
         }
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
       }
     },
-    "/api/users/{id}": {
+    "/api/User/{id}": {
       "get": {
         "tags": [
           "User"
@@ -630,10 +630,10 @@
         }
       }
     },
-    "/api/users/{userId}/roles/{roleId}": {
+    "/api/User/{userId}/assign-role/{roleId}": {
       "post": {
         "tags": [
-          "UserRole"
+          "User"
         ],
         "parameters": [
           {
@@ -660,10 +660,12 @@
             "description": "OK"
           }
         }
-      },
+      }
+    },
+    "/api/User/{userId}/remove-role/{roleId}": {
       "delete": {
         "tags": [
-          "UserRole"
+          "User"
         ],
         "parameters": [
           {
@@ -677,6 +679,29 @@
           },
           {
             "name": "roleId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/User/{userId}/roles": {
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "parameters": [
+          {
+            "name": "userId",
             "in": "path",
             "required": true,
             "schema": {

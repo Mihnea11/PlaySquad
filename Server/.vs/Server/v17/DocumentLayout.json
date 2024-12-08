@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\controllers\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\services\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -29,10 +29,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\dtos\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\dtos\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\services\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\boanc\\studioprojects\\playsquad\\server\\server\\repositories\\interfaces\\irepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -82,17 +78,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Models.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Models\\Models.cs",
               "RelativeDocumentMoniker": "Server\\Models\\Models.cs",
-              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Models\\Models.cs*",
-              "RelativeToolTip": "Server\\Models\\Models.cs*",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAgwGIAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Models\\Models.cs",
+              "RelativeToolTip": "Server\\Models\\Models.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAqwEQAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-08T19:17:38.185Z",
               "EditorCaption": ""
@@ -125,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ApplicationDbContext.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Data\\ApplicationDbContext.cs",
               "RelativeDocumentMoniker": "Server\\Data\\ApplicationDbContext.cs",
@@ -138,28 +134,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Service.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Services\\Service.cs",
               "RelativeDocumentMoniker": "Server\\Services\\Service.cs",
-              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Services\\Service.cs*",
-              "RelativeToolTip": "Server\\Services\\Service.cs*",
-              "ViewState": "AgIAAAYBAAAAAAAAAAAswBYBAAAFAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Services\\Service.cs",
+              "RelativeToolTip": "Server\\Services\\Service.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAMwJkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-07T11:53:58.061Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IService.cs",
-              "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Services\\Interfaces\\IService.cs",
-              "RelativeDocumentMoniker": "Server\\Services\\Interfaces\\IService.cs",
-              "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Services\\Interfaces\\IService.cs",
-              "RelativeToolTip": "Server\\Services\\Interfaces\\IService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-07T11:53:11.989Z",
               "EditorCaption": ""
             },
             {
@@ -170,7 +153,7 @@
               "RelativeDocumentMoniker": "Server\\Controllers\\Controllers.cs",
               "ToolTip": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Controllers\\Controllers.cs",
               "RelativeToolTip": "Server\\Controllers\\Controllers.cs",
-              "ViewState": "AgIAAB0BAAAAAAAAAAAYwCwBAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAHwBAAAAAAAAAAAAAJABAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-12-07T13:36:05.719Z",
               "EditorCaption": ""
@@ -190,7 +173,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "IRepository.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Repositories\\Interfaces\\IRepository.cs",
               "RelativeDocumentMoniker": "Server\\Repositories\\Interfaces\\IRepository.cs",
@@ -203,7 +186,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 8,
               "Title": "Repository.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Repositories\\Repository.cs",
               "RelativeDocumentMoniker": "Server\\Repositories\\Repository.cs",
@@ -216,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 9,
               "Title": "20241207175243_ModifiedIds.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Migrations\\20241207175243_ModifiedIds.cs",
               "RelativeDocumentMoniker": "Server\\Migrations\\20241207175243_ModifiedIds.cs",
@@ -228,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 15,
               "Title": "20241207173838_AddedIntermediaryTables.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Migrations\\20241207173838_AddedIntermediaryTables.cs",
               "RelativeDocumentMoniker": "Server\\Migrations\\20241207173838_AddedIntermediaryTables.cs",
@@ -240,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 16,
               "Title": "20241207114432_RefactoredStructure.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Migrations\\20241207114432_RefactoredStructure.cs",
               "RelativeDocumentMoniker": "Server\\Migrations\\20241207114432_RefactoredStructure.cs",
@@ -252,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 10,
               "Title": "20241207111803_AddedAdditionalModels.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Migrations\\20241207111803_AddedAdditionalModels.cs",
               "RelativeDocumentMoniker": "Server\\Migrations\\20241207111803_AddedAdditionalModels.cs",
@@ -264,7 +247,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 11,
               "Title": "ApplicationDbContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Migrations\\ApplicationDbContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "Server\\Migrations\\ApplicationDbContextModelSnapshot.cs",
@@ -276,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "20241207111200_AddedAdditionalModels.cs",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Migrations\\20241207111200_AddedAdditionalModels.cs",
               "RelativeDocumentMoniker": "Server\\Migrations\\20241207111200_AddedAdditionalModels.cs",
@@ -288,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 13,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\appsettings.json",
               "RelativeDocumentMoniker": "Server\\appsettings.json",
@@ -300,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 14,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Server\\Properties\\launchSettings.json",

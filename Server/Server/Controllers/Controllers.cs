@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Server.Controllers
 {
-    [Route("api/users")]
+    [Route("api/[controller]")]
     [ApiController]
     public class UserController : ControllerBase
     {
@@ -17,6 +17,21 @@ namespace Server.Controllers
             _userService = userService;
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateUser([FromBody] UserCreateDTO userCreateDTO)
+        {
+            var userDto = await _userService.CreateAsync(userCreateDTO);
+            return CreatedAtAction(nameof(GetUserById), new { id = userDto.Id }, userDto);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetUserById(int id)
+        {
+            var user = await _userService.GetByIdAsync(id);
+            if (user == null) return NotFound();
+            return Ok(user);
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetAllUsers()
         {
@@ -24,61 +39,44 @@ namespace Server.Controllers
             return Ok(users);
         }
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> GetUserById(int id)
-        {
-            var user = await _userService.GetByIdAsync(id);
-            if (user == null)
-            {
-                return NotFound(new { Message = "User not found." });
-            }
-            return Ok(user);
-        }
-
-        [HttpPost]
-        public async Task<IActionResult> CreateUser([FromBody] UserCreateDTO userCreateDTO)
-        {
-            try
-            {
-                var userDto = await _userService.CreateAsync(userCreateDTO);
-                return CreatedAtAction(nameof(GetUserById), new { id = userDto.Id }, userDto);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
-
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateUser(int id, [FromBody] UserCreateDTO updateDto)
         {
-            try
-            {
-                var updatedUser = await _userService.UpdateAsync(id, updateDto);
-                return Ok(updatedUser);
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
+            var user = await _userService.UpdateAsync(id, updateDto);
+            return Ok(user);
         }
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
         {
-            try
-            {
-                var success = await _userService.DeleteAsync(id);
-                if (!success)
-                    return NotFound(new { Message = "User not found." });
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
+            var deleted = await _userService.DeleteAsync(id);
+            if (!deleted) return NotFound();
+            return NoContent();
+        }
+
+        [HttpPost("{userId}/assign-role/{roleId}")]
+        public async Task<IActionResult> AssignRoleToUser(int userId, int roleId)
+        {
+            await _userService.AssignRoleToUserAsync(userId, roleId);
+            return Ok(new { Message = "Role assigned successfully." });
+        }
+
+        [HttpDelete("{userId}/remove-role/{roleId}")]
+        public async Task<IActionResult> RemoveRoleFromUser(int userId, int roleId)
+        {
+            await _userService.RemoveRoleFromUserAsync(userId, roleId);
+            return Ok(new { Message = "Role removed successfully." });
+        }
+
+        [HttpGet("{userId}/roles")]
+        public async Task<IActionResult> GetUserRoles(int userId)
+        {
+            var roles = await _userService.GetRolesForUserAsync(userId);
+            return Ok(roles);
         }
     }
+
+
 
 
     [Route("api/games")]
@@ -313,7 +311,7 @@ namespace Server.Controllers
             return Ok(new { Message = "User successfully removed from the game." });
         }
     }
-    [Route("api/roles")]
+    [Route("api/[controller]")]
     [ApiController]
     public class RoleController : ControllerBase
     {
@@ -328,20 +326,34 @@ namespace Server.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAllRoles()
         {
-            var roles = await _roleService.GetAllAsync();
-            return Ok(roles);
+            try
+            {
+                var roles = await _roleService.GetAllAsync();
+                return Ok(roles);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An error occurred while fetching the roles.", Details = ex.Message });
+            }
         }
 
         // Get a role by ID
         [HttpGet("{id}")]
         public async Task<IActionResult> GetRoleById(int id)
         {
-            var role = await _roleService.GetByIdAsync(id);
-            if (role == null)
+            try
             {
-                return NotFound(new { Message = "Role not found." });
+                var role = await _roleService.GetByIdAsync(id);
+                if (role == null)
+                {
+                    return NotFound(new { Message = "Role not found." });
+                }
+                return Ok(role);
             }
-            return Ok(role);
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { Message = "An error occurred while fetching the role.", Details = ex.Message });
+            }
         }
 
         // Create a new role
@@ -359,13 +371,13 @@ namespace Server.Controllers
             }
         }
 
-        // Update an existing role
+        // Update a role
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRole(int id, [FromBody] RoleCreateDTO updateDto)
+        public async Task<IActionResult> UpdateRole(int id, [FromBody] RoleCreateDTO roleUpdateDTO)
         {
             try
             {
-                var updatedRole = await _roleService.UpdateAsync(id, updateDto);
+                var updatedRole = await _roleService.UpdateAsync(id, roleUpdateDTO);
                 return Ok(updatedRole);
             }
             catch (Exception ex)
@@ -380,10 +392,12 @@ namespace Server.Controllers
         {
             try
             {
-                var success = await _roleService.DeleteAsync(id);
-                if (!success)
+                bool deleted = await _roleService.DeleteAsync(id);
+                if (!deleted)
+                {
                     return NotFound(new { Message = "Role not found." });
-                return NoContent();
+                }
+                return Ok(new { Message = "Role deleted successfully." });
             }
             catch (Exception ex)
             {
@@ -391,45 +405,4 @@ namespace Server.Controllers
             }
         }
     }
-    [Route("api/users/{userId}/roles")]
-    [ApiController]
-    public class UserRoleController : ControllerBase
-    {
-        private readonly IUserService _userService;
-
-        public UserRoleController(IUserService userService)
-        {
-            _userService = userService;
-        }
-
-        [HttpPost("{roleId}")]
-        public async Task<IActionResult> AssignRoleToUser(int userId, int roleId)
-        {
-            try
-            {
-                await _userService.AssignRoleToUserAsync(userId, roleId);
-                return Ok(new { Message = "Role assigned successfully." });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
-
-        [HttpDelete("{roleId}")]
-        public async Task<IActionResult> RemoveRoleFromUser(int userId, int roleId)
-        {
-            try
-            {
-                await _userService.RemoveRoleFromUserAsync(userId, roleId);
-                return Ok(new { Message = "Role removed successfully." });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
-    }
-
-
 }
