@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.JsonPatch;
+using Microsoft.AspNetCore.Mvc;
 using Server.Data;
 using Server.DTOs;
+using Server.Models;
 using Server.Services;
 using System.Threading.Tasks;
 
@@ -39,12 +41,17 @@ namespace Server.Controllers
             return Ok(users);
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateUser(int id, [FromBody] UserCreateDTO updateDto)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateUserPartial(int id, [FromBody] UserPatchDTO updateDto)
         {
-            var user = await _userService.UpdateAsync(id, updateDto);
-            return Ok(user);
+            var updatedUser = await _userService.UpdatePartialAsync(id, updateDto);
+            if (updatedUser == null)
+            {
+                return NotFound(new { Message = "User not found." });
+            }
+            return Ok(updatedUser);
         }
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUser(int id)
@@ -122,19 +129,18 @@ namespace Server.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateGame(int id, [FromBody] GameCreateDTO updateDto)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateGamePartial(int id, [FromBody] GamePatchDTO updateDto)
         {
-            try
+            var updatedGame = await _gameService.UpdatePartialAsync(id, updateDto);
+            if (updatedGame == null)
             {
-                var updatedGame = await _gameService.UpdateAsync(id, updateDto);
-                return Ok(updatedGame);
+                return NotFound(new { Message = "Game not found." });
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
+            return Ok(updatedGame);
         }
+
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteGame(int id)
@@ -210,19 +216,18 @@ namespace Server.Controllers
             }
         }
 
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateArena(int id, [FromBody] ArenaCreateDTO updateDto)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateArenaPartial(int id, [FromBody] ArenaPatchDTO updateDto)
         {
-            try
+            var updatedArena = await _arenaService.UpdatePartialAsync(id, updateDto);
+            if (updatedArena == null)
             {
-                var updatedArena = await _arenaService.UpdateAsync(id, updateDto);
-                return Ok(updatedArena);
+                return NotFound(new { Message = "Arena not found." });
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
+            return Ok(updatedArena);
         }
+
+
 
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteArena(int id)
@@ -371,20 +376,18 @@ namespace Server.Controllers
             }
         }
 
-        // Update a role
-        [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRole(int id, [FromBody] RoleCreateDTO roleUpdateDTO)
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateRolePartial(int id, [FromBody] RolePatchDTO updateDto)
         {
-            try
+            var updatedRole = await _roleService.UpdatePartialAsync(id, updateDto);
+            if (updatedRole == null)
             {
-                var updatedRole = await _roleService.UpdateAsync(id, roleUpdateDTO);
-                return Ok(updatedRole);
+                return NotFound(new { Message = "Role not found." });
             }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
+            return Ok(updatedRole);
         }
+
+
 
         // Delete a role
         [HttpDelete("{id}")]

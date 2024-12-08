@@ -43,9 +43,9 @@
   },
   {
     "ContainingType": "Server.Controllers.ArenaController",
-    "Method": "UpdateArena",
+    "Method": "UpdateArenaPartial",
     "RelativePath": "api/arenas/{id}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -56,7 +56,7 @@
       },
       {
         "Name": "updateDto",
-        "Type": "Server.DTOs.ArenaCreateDTO",
+        "Type": "Server.DTOs.ArenaPatchDTO",
         "IsRequired": true
       }
     ],
@@ -164,9 +164,9 @@
   },
   {
     "ContainingType": "Server.Controllers.GameController",
-    "Method": "UpdateGame",
+    "Method": "UpdateGamePartial",
     "RelativePath": "api/games/{id}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -177,7 +177,7 @@
       },
       {
         "Name": "updateDto",
-        "Type": "Server.DTOs.GameCreateDTO",
+        "Type": "Server.DTOs.GamePatchDTO",
         "IsRequired": true
       }
     ],
@@ -259,9 +259,9 @@
   },
   {
     "ContainingType": "Server.Controllers.RoleController",
-    "Method": "UpdateRole",
+    "Method": "UpdateRolePartial",
     "RelativePath": "api/Role/{id}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -271,8 +271,8 @@
         "IsRequired": true
       },
       {
-        "Name": "roleUpdateDTO",
-        "Type": "Server.DTOs.RoleCreateDTO",
+        "Name": "updateDto",
+        "Type": "Server.DTOs.RolePatchDTO",
         "IsRequired": true
       }
     ],
@@ -338,9 +338,9 @@
   },
   {
     "ContainingType": "Server.Controllers.UserController",
-    "Method": "UpdateUser",
+    "Method": "UpdateUserPartial",
     "RelativePath": "api/User/{id}",
-    "HttpMethod": "PUT",
+    "HttpMethod": "PATCH",
     "IsController": true,
     "Order": 0,
     "Parameters": [
@@ -351,7 +351,7 @@
       },
       {
         "Name": "updateDto",
-        "Type": "Server.DTOs.UserCreateDTO",
+        "Type": "Server.DTOs.UserPatchDTO",
         "IsRequired": true
       }
     ],

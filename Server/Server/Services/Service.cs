@@ -9,19 +9,17 @@ using System.Threading.Tasks;
 
 namespace Server.Services
 {
-    public interface IUserService
-    {
-        Task<UserDTO> CreateAsync(UserCreateDTO createDto);
-        Task<UserDTO?> GetByIdAsync(int id);
-        Task<IEnumerable<UserDTO>> GetAllAsync();
-        Task<UserDTO> UpdateAsync(int id, UserCreateDTO updateDto);
-        Task<bool> DeleteAsync(int id);
-
-        // Role management methods
-        Task AssignRoleToUserAsync(int userId, int roleId);
-        Task RemoveRoleFromUserAsync(int userId, int roleId);
-        Task<IEnumerable<RoleDTO>> GetRolesForUserAsync(int userId);
-    }
+        public interface IUserService
+        {
+            Task<UserDTO> CreateAsync(UserCreateDTO userCreateDTO);
+            Task<UserDTO?> GetByIdAsync(int id);
+            Task<IEnumerable<UserDTO>> GetAllAsync();
+            Task<UserDTO> UpdatePartialAsync(int id, UserPatchDTO updateDto);
+            Task<bool> DeleteAsync(int id);
+            Task AssignRoleToUserAsync(int userId, int roleId);
+            Task RemoveRoleFromUserAsync(int userId, int roleId);
+            Task<IEnumerable<RoleDTO>> GetRolesForUserAsync(int userId);
+        }
 
     public class UserService : IUserService
     {
@@ -54,15 +52,27 @@ namespace Server.Services
             return _mapper.Map<IEnumerable<UserDTO>>(users);
         }
 
-        public async Task<UserDTO> UpdateAsync(int id, UserCreateDTO updateDto)
+        public async Task<UserDTO> UpdatePartialAsync(int id, UserPatchDTO updateDto)
         {
             var user = await _context.Users.FindAsync(id);
-            if (user == null) throw new KeyNotFoundException("User not found.");
+            if (user == null) return null;
 
-            _mapper.Map(updateDto, user);
+            user.Name = updateDto.Name ?? user.Name;
+            user.Email = updateDto.Email ?? user.Email;
+            user.Age = updateDto.Age.HasValue && updateDto.Age.Value != 0 ? updateDto.Age.Value : user.Age;
+            user.City = updateDto.City ?? user.City;
+
+            _context.Users.Update(user);
             await _context.SaveChangesAsync();
 
-            return _mapper.Map<UserDTO>(user);
+            return new UserDTO
+            {
+                Id = user.Id,
+                Name = user.Name,
+                Email = user.Email,
+                Age = user.Age,
+                City = user.City
+            };
         }
 
         public async Task<bool> DeleteAsync(int id)
@@ -116,12 +126,11 @@ namespace Server.Services
 
     public interface IGameService
     {
-        Task<IEnumerable<GameDTO>> GetAllAsync();
+        Task<GameDTO> CreateAsync(GameCreateDTO gameCreateDTO);
         Task<GameDTO?> GetByIdAsync(int id);
-        Task<GameDTO> CreateAsync(GameCreateDTO createDto);
-        Task<GameDTO> UpdateAsync(int id, GameCreateDTO updateDto);
+        Task<IEnumerable<GameDTO>> GetAllAsync();
+        Task<GameDTO> UpdatePartialAsync(int id, GamePatchDTO updateDto);
         Task<bool> DeleteAsync(int id);
-        Task AddUserToGameAsync(int gameId, int userId);
         Task<IEnumerable<GameDTO>> GetGamesByUserIdAsync(int userId);
     }
 
@@ -157,16 +166,29 @@ namespace Server.Services
             return _mapper.Map<GameDTO>(game);
         }
 
-        public async Task<GameDTO> UpdateAsync(int gameId, GameCreateDTO gameUpdateDto)
+        public async Task<GameDTO> UpdatePartialAsync(int id, GamePatchDTO updateDto)
         {
-            var game = await _context.Games.FindAsync(gameId);
-            if (game == null) throw new KeyNotFoundException("Game not found.");
+            var game = await _context.Games.FindAsync(id);
+            if (game == null) return null;
 
-            _mapper.Map(gameUpdateDto, game);
+            game.Type = updateDto.Type ?? game.Type;
+            game.StartTime = updateDto.StartTime.HasValue ? updateDto.StartTime.Value : game.StartTime;
+            game.EndTime = updateDto.EndTime.HasValue ? updateDto.EndTime.Value : game.EndTime;
+            game.ArenaId = updateDto.ArenaId.HasValue ? updateDto.ArenaId.Value : game.ArenaId;
+
+            _context.Games.Update(game);
             await _context.SaveChangesAsync();
 
-            return _mapper.Map<GameDTO>(game);
+            return new GameDTO
+            {
+                Id = game.Id,
+                Type = game.Type,
+                StartTime = game.StartTime,
+                EndTime = game.EndTime,
+                ArenaId = game.ArenaId
+            };
         }
+
 
         public async Task<bool> DeleteAsync(int gameId)
         {
@@ -216,10 +238,10 @@ namespace Server.Services
 
     public interface IArenaService
     {
-        Task<IEnumerable<ArenaDTO>> GetAllAsync();
+        Task<ArenaDTO> CreateAsync(ArenaCreateDTO arenaCreateDTO);
         Task<ArenaDTO?> GetByIdAsync(int id);
-        Task<ArenaDTO> CreateAsync(ArenaCreateDTO createDto);
-        Task<ArenaDTO> UpdateAsync(int id, ArenaCreateDTO updateDto);
+        Task<IEnumerable<ArenaDTO>> GetAllAsync();
+        Task<ArenaDTO> UpdatePartialAsync(int id, ArenaPatchDTO updateDto);
         Task<bool> DeleteAsync(int id);
     }
 
@@ -255,16 +277,32 @@ namespace Server.Services
             return _mapper.Map<ArenaDTO>(arena);
         }
 
-        public async Task<ArenaDTO> UpdateAsync(int arenaId, ArenaCreateDTO arenaUpdateDto)
+        public async Task<ArenaDTO> UpdatePartialAsync(int id, ArenaPatchDTO updateDto)
         {
-            var arena = await _context.Arenas.FindAsync(arenaId);
-            if (arena == null) throw new KeyNotFoundException("Arena not found.");
+            var arena = await _context.Arenas.FindAsync(id);
+            if (arena == null) return null;
+            arena.Name = updateDto.Name ?? arena.Name;
+            arena.Address = updateDto.Address ?? arena.Address;
+            arena.MinPlayers = updateDto.MinPlayers.HasValue && updateDto.MinPlayers.Value != 0 ? updateDto.MinPlayers.Value : arena.MinPlayers;
+            arena.MaxPlayers = updateDto.MaxPlayers.HasValue && updateDto.MaxPlayers.Value != 0 ? updateDto.MaxPlayers.Value : arena.MaxPlayers;
+            arena.Type = updateDto.Type ?? arena.Type;
+            arena.Price = updateDto.Price.HasValue && updateDto.Price.Value != 0 ? updateDto.Price.Value : arena.Price;
 
-            _mapper.Map(arenaUpdateDto, arena);
+            _context.Arenas.Update(arena);
             await _context.SaveChangesAsync();
 
-            return _mapper.Map<ArenaDTO>(arena);
+            return new ArenaDTO
+            {
+                Id = arena.Id,
+                Name = arena.Name,
+                Address = arena.Address,
+                MinPlayers = arena.MinPlayers,
+                MaxPlayers = arena.MaxPlayers,
+                Type = arena.Type,
+                Price = arena.Price
+            };
         }
+
 
         public async Task<bool> DeleteAsync(int arenaId)
         {
@@ -283,7 +321,7 @@ namespace Server.Services
         Task<IEnumerable<RoleDTO>> GetAllAsync();
         Task<RoleDTO?> GetByIdAsync(int id);
         Task<RoleDTO> CreateAsync(RoleCreateDTO createDto);
-        Task<RoleDTO> UpdateAsync(int id, RoleCreateDTO updateDto);
+        Task<RoleDTO> UpdatePartialAsync(int id, RolePatchDTO updateDto);
         Task<bool> DeleteAsync(int id);
     }
 
@@ -319,16 +357,23 @@ namespace Server.Services
             return _mapper.Map<RoleDTO>(role);
         }
 
-        public async Task<RoleDTO> UpdateAsync(int roleId, RoleCreateDTO roleUpdateDto)
+        public async Task<RoleDTO> UpdatePartialAsync(int id, RolePatchDTO updateDto)
         {
-            var role = await _context.Roles.FindAsync(roleId);
-            if (role == null) throw new KeyNotFoundException("Role not found.");
+            var role = await _context.Roles.FindAsync(id);
+            if (role == null) return null;
 
-            _mapper.Map(roleUpdateDto, role);
+            role.Name = updateDto.Name ?? role.Name;
+
+            _context.Roles.Update(role);
             await _context.SaveChangesAsync();
 
-            return _mapper.Map<RoleDTO>(role);
+            return new RoleDTO
+            {
+                Id = role.Id,
+                Name = role.Name
+            };
         }
+
 
         public async Task<bool> DeleteAsync(int roleId)
         {

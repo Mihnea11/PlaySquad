@@ -17,6 +17,14 @@
         public int Age { get; set; }
         public string City { get; set; }
     }
+
+    public class UserPatchDTO
+    {
+        public string? Name { get; set; }
+        public string? Email { get; set; }
+        public int? Age { get; set; }
+        public string? City { get; set; }
+    }
     public class RoleDTO
     {
         public int Id { get; set; }
@@ -26,6 +34,11 @@
     public class RoleCreateDTO
     {
         public string Name { get; set; }
+    }
+
+    public class RolePatchDTO
+    {
+        public string? Name { get; set; }
     }
     public class ArenaDTO
     {
@@ -47,6 +60,16 @@
         public string Type { get; set; }
         public decimal Price { get; set; }
     }
+
+    public class ArenaPatchDTO
+    {
+        public string? Name { get; set; }
+        public string? Address { get; set; }
+        public int? MinPlayers { get; set; }
+        public int? MaxPlayers { get; set; }
+        public string? Type { get; set; }
+        public decimal? Price { get; set; }
+    }
     public class GameDTO
     {
         public int Id { get; set; }
@@ -62,5 +85,13 @@
         public DateTime StartTime { get; set; }
         public DateTime EndTime { get; set; }
         public int ArenaId { get; set; }
+    }
+
+    public class GamePatchDTO
+    {
+        public string? Type { get; set; }
+        public DateTime? StartTime { get; set; }
+        public DateTime? EndTime { get; set; }
+        public int? ArenaId { get; set; }
     }
 }

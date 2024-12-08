@@ -73,7 +73,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "tags": [
           "Arena"
         ],
@@ -92,22 +92,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/ArenaCreateDTO"
+                "$ref": "#/components/schemas/ArenaPatchDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/ArenaCreateDTO"
+                "$ref": "#/components/schemas/ArenaPatchDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/ArenaCreateDTO"
+                "$ref": "#/components/schemas/ArenaPatchDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/ArenaCreateDTO"
+                "$ref": "#/components/schemas/ArenaPatchDTO"
               }
             }
           }
@@ -208,7 +208,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "tags": [
           "Game"
         ],
@@ -227,22 +227,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/GameCreateDTO"
+                "$ref": "#/components/schemas/GamePatchDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/GameCreateDTO"
+                "$ref": "#/components/schemas/GamePatchDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/GameCreateDTO"
+                "$ref": "#/components/schemas/GamePatchDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/GameCreateDTO"
+                "$ref": "#/components/schemas/GamePatchDTO"
               }
             }
           }
@@ -428,7 +428,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "tags": [
           "Role"
         ],
@@ -447,22 +447,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/RoleCreateDTO"
+                "$ref": "#/components/schemas/RolePatchDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/RoleCreateDTO"
+                "$ref": "#/components/schemas/RolePatchDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/RoleCreateDTO"
+                "$ref": "#/components/schemas/RolePatchDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/RoleCreateDTO"
+                "$ref": "#/components/schemas/RolePatchDTO"
               }
             }
           }
@@ -563,7 +563,7 @@
           }
         }
       },
-      "put": {
+      "patch": {
         "tags": [
           "User"
         ],
@@ -582,22 +582,22 @@
           "content": {
             "application/json-patch+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserCreateDTO"
+                "$ref": "#/components/schemas/UserPatchDTO"
               }
             },
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserCreateDTO"
+                "$ref": "#/components/schemas/UserPatchDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserCreateDTO"
+                "$ref": "#/components/schemas/UserPatchDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserCreateDTO"
+                "$ref": "#/components/schemas/UserPatchDTO"
               }
             }
           }
@@ -750,6 +750,39 @@
         },
         "additionalProperties": false
       },
+      "ArenaPatchDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "address": {
+            "type": "string",
+            "nullable": true
+          },
+          "minPlayers": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "maxPlayers": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "price": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "GameCreateDTO": {
         "type": "object",
         "properties": {
@@ -772,7 +805,42 @@
         },
         "additionalProperties": false
       },
+      "GamePatchDTO": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "nullable": true
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "endTime": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "arenaId": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "RoleCreateDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "RolePatchDTO": {
         "type": "object",
         "properties": {
           "name": {
@@ -800,6 +868,29 @@
           "age": {
             "type": "integer",
             "format": "int32"
+          },
+          "city": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "UserPatchDTO": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "age": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           },
           "city": {
             "type": "string",
