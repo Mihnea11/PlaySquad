@@ -43,10 +43,7 @@ public class ProfileFragment extends Fragment {
         // Initialize UI components
         profileImageView = view.findViewById(R.id.profileImageView);
         userNameTextView = view.findViewById(R.id.userNameTextView);
-        userLocationTextView = view.findViewById(R.id.userLocationTextView);
-        userSportsTextView = view.findViewById(R.id.userSportsTextView);
         userLevelTextView = view.findViewById(R.id.userLevelTextView);
-        userAvailabilityTextView = view.findViewById(R.id.userAvailabilityTextView);
         editProfileButton = view.findViewById(R.id.editProfileButton);
 
         // Load user details (Replace with actual data fetching logic)
@@ -67,8 +64,7 @@ public class ProfileFragment extends Fragment {
         userLevelTextView.setText("Intermediate");
         userAvailabilityTextView.setText("Weekends: 10 AM - 6 PM");
 
-        // Load profile image (Replace with real image loading logic)
-        profileImageView.setImageResource(R.drawable.ic_default_profile);
+        profileImageView.setImageResource(R.drawable.app_logo);
     }
 
     /**

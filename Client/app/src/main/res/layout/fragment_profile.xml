@@ -188,7 +188,7 @@
                         android:gravity="center">
 
                         <TextView
-                            android:id="@+id/cardNumberTextView"
+                            android:id="@+id/cardNumberTextView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="120"
@@ -196,7 +196,7 @@
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/cardLabelTextView"
+                            android:id="@+id/cardLabelTextView2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Games Played"

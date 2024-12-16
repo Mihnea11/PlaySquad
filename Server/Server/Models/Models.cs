@@ -26,11 +26,11 @@ namespace Server.Models
 
         // Navigation property for many-to-many relationship with Roles
         [JsonIgnore]
-        public ICollection<Role> Roles { get; set; }
+        public ICollection<Role> Roles { get; set; } = new List<Role>();
 
         // Navigation property for many-to-many relationship with Games
         [JsonIgnore]
-        public ICollection<Game> Games { get; set; }
+        public ICollection<Game> Games { get; set; } = new List<Game>();
     }
 
     public class Role
@@ -44,7 +44,7 @@ namespace Server.Models
 
         // Navigation property for many-to-many relationship with Users
         [JsonIgnore]
-        public ICollection<User> Users { get; set; }
+        public ICollection<User> Users { get; set; } = new List<User>();
     }
     public class Game
     {
@@ -70,7 +70,7 @@ namespace Server.Models
 
         // Navigation property for many-to-many relationship with Users
         [JsonIgnore]
-        public ICollection<User> Users { get; set; }
+        public ICollection<User> Users { get; set; }= new List<User>();
     }
     public class Arena
     {
@@ -93,6 +93,6 @@ namespace Server.Models
 
         // Navigation property to the Games in this Arena
         [JsonIgnore]
-        public ICollection<Game> Games { get; set; }
+        public ICollection<Game> Games { get; set; }= new List<Game>();
     }
 }

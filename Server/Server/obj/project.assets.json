@@ -8255,23 +8255,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\boanc\\.nuget\\packages\\": {},
+    "C:\\Users\\40741\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Server.csproj",
+      "projectUniqueName": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Server.csproj",
       "projectName": "Server",
-      "projectPath": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\Server.csproj",
-      "packagesPath": "C:\\Users\\boanc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\boanc\\StudioProjects\\PlaySquad\\Server\\Server\\obj\\",
+      "projectPath": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Server.csproj",
+      "packagesPath": "C:\\Users\\40741\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\boanc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\40741\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -8280,6 +8280,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8296,9 +8297,8 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "all"
-      },
-      "SdkAnalysisLevel": "9.0.100"
+        "auditMode": "direct"
+      }
     },
     "frameworks": {
       "net8.0": {
@@ -8372,7 +8372,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
