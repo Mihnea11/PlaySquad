@@ -1,30 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\",
+  "WorkspaceRootPath": "D:\\Master\\Android App Development\\Play Squad\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\data\\seeddata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\data\\roleseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\data\\roleseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\dtos\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\dtos\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\models\\models.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\controllers\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\controllers\\controllers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4073561D-23D3-4F49-AE72-9A1F2B54013B}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\dto\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\dto\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,88 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Controllers.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Controllers\\Controllers.cs",
-              "RelativeDocumentMoniker": "Server\\Controllers\\Controllers.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Controllers\\Controllers.cs",
-              "RelativeToolTip": "Server\\Controllers\\Controllers.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:46:24.019Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Program.cs",
-              "RelativeDocumentMoniker": "Server\\Program.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Program.cs",
-              "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAiwCYAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:35:32.169Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SeedData.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Data\\SeedData.cs",
-              "RelativeDocumentMoniker": "Server\\Data\\SeedData.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Data\\SeedData.cs",
-              "RelativeToolTip": "Server\\Data\\SeedData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAjwBIAAAARAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:32:41.177Z",
+              "WhenOpened": "2024-12-30T14:57:23.463Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ApplicationDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Data\\ApplicationDbContext.cs",
-              "RelativeDocumentMoniker": "Server\\Data\\ApplicationDbContext.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Data\\ApplicationDbContext.cs",
-              "RelativeToolTip": "Server\\Data\\ApplicationDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Title": "RoleSeeder.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Data\\RoleSeeder.cs",
+              "RelativeDocumentMoniker": "Server\\Data\\RoleSeeder.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Data\\RoleSeeder.cs",
+              "RelativeToolTip": "Server\\Data\\RoleSeeder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:11:52.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Models.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Models\\Models.cs",
-              "RelativeDocumentMoniker": "Server\\Models\\Models.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Models\\Models.cs",
-              "RelativeToolTip": "Server\\Models\\Models.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF8AAABDAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:09:48.082Z",
+              "WhenOpened": "2024-12-30T15:01:44.215Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "DTOs.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\DTOs\\DTOs.cs",
-              "RelativeDocumentMoniker": "Server\\DTOs\\DTOs.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\DTOs\\DTOs.cs",
-              "RelativeToolTip": "Server\\DTOs\\DTOs.cs",
-              "ViewState": "AgIAAF0AAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\DTO\\UserResponse.cs",
+              "RelativeDocumentMoniker": "Server\\DTO\\UserResponse.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\DTO\\UserResponse.cs",
+              "RelativeToolTip": "Server\\DTO\\UserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-16T07:08:59.214Z",
+              "WhenOpened": "2024-12-30T14:50:50.365Z",
               "EditorCaption": ""
             }
           ]

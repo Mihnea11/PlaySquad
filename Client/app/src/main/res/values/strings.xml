@@ -25,4 +25,10 @@
     <string name="user_email">user@mail.com</string>
     <string name="user_name">User Name</string>
     <string name="background_image">Background Image Placeholder</string>
+    <string name="background_gradient">background_gradient</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="join_community">Join our comunity!</string>
+    <string name="username">Username</string>
+    <string name="already_have_account">Already have an account? Login!</string>
 </resources>

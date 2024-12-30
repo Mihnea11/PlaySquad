@@ -1,179 +1,178 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="@color/backgroundLight"
+    android:fillViewport="true"
     tools:context=".authentication.LoginFragment">
 
-    <LinearLayout
-        android:id="@+id/fieldsContainer"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:gravity="center"
-        android:layout_marginTop="80dp">
+        android:background="@drawable/gradient_background">
 
-        <EditText
-            android:id="@+id/emailField"
+        <!-- Abstract Background Pattern -->
+        <ImageView
+            android:id="@+id/abstractBackground"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/abstract_background"
+            android:alpha="0.5"
+            android:contentDescription="@string/background_image" />
+
+        <!-- Welcome Text -->
+        <TextView
+            android:id="@+id/welcomeBackText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:hint="@string/email"
-            android:importantForAutofill="no"
-            android:inputType="textEmailAddress|textNoSuggestions"
-            android:focusable="true"
-            android:padding="12dp"
-            android:textSize="16sp"
-            android:longClickable="false"
-            android:textIsSelectable="false"
-            android:backgroundTint="@color/secondaryDark"/>
+            android:text="@string/welcome_back"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            android:textColor="@color/primaryVeryDark"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp" />
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp">
-
-            <EditText
-                android:id="@+id/passwordField"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/password"
-                android:importantForAutofill="no"
-                android:inputType="textPassword"
-                android:focusable="true"
-                android:padding="12dp"
-                android:textSize="16sp"
-                android:backgroundTint="@color/secondaryDark"/>
-
-            <ImageButton
-                android:id="@+id/viewPasswordButton"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_eye_closed"
-                android:background="@android:color/transparent"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:contentDescription="@string/password_visibility_placeholder"
-                android:scaleType="centerInside" />
-
-        </RelativeLayout>
-
-        <Button
-            android:id="@+id/loginButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/login"
-            android:backgroundTint="@color/primaryColor"
-            android:textColor="@color/white"
-            android:layout_marginTop="16dp"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/fieldsContainer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="124dp">
-
+        <!-- Input Fields Container -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:id="@+id/fieldsContainer"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
-            android:backgroundTint="@color/facebookBlue"
-            android:layout_marginBottom="8dp"
-            android:padding="12dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/welcomeBackText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginTop="40dp">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Email Field -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
-                android:text="@string/login_with"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:layout_marginStart="8dp"/>
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="5dp"
-                android:contentDescription="@string/image_placeholder"
-                android:src="@drawable/ic_facebook"/>
+                <EditText
+                    android:id="@+id/emailField"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autofillHints="emailAddress"
+                    android:background="@android:color/transparent"
+                    android:hint="@string/email"
+                    android:inputType="textEmailAddress"
+                    android:padding="16dp"
+                    android:textColor="@color/primaryVeryDark"
+                    android:textColorHint="#757575"
+                    android:textSize="16sp" />
+            </androidx.cardview.widget.CardView>
+
+            <!-- Password Field with Toggle -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="400dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="4dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/passwordField"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_toStartOf="@id/viewPasswordButton"
+                        android:autofillHints="password"
+                        android:background="@android:color/transparent"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:padding="16dp"
+                        android:textColor="@color/primaryVeryDark"
+                        android:textColorHint="#757575"
+                        android:textSize="16sp" />
+
+                    <ImageButton
+                        android:id="@+id/viewPasswordButton"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:src="@drawable/ic_eye_closed"
+                        android:background="@android:color/transparent"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:contentDescription="@string/password_visibility_placeholder"
+                        android:scaleType="centerInside" />
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Login Button -->
+            <Button
+                android:id="@+id/loginButton"
+                android:layout_width="250dp"
+                android:layout_height="48dp"
+                android:text="@string/login"
+                android:backgroundTint="@color/primaryColor"
+                android:textColor="@color/white"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp" />
         </LinearLayout>
 
+        <!-- Google Login Button -->
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/fieldsContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="32dp"
             android:background="@drawable/button_background"
             android:backgroundTint="@color/offWhite"
-            android:layout_marginBottom="8dp"
-            android:padding="12dp"
+            android:padding="10dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/login_with"
+                android:text="@string/login_with_google"
                 android:textColor="@color/black"
                 android:textSize="16sp"
-                android:layout_marginStart="8dp"/>
+                android:layout_marginStart="8dp" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
-                android:contentDescription="@string/image_placeholder"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/ic_google"/>
+                android:contentDescription="@string/image_placeholder"
+                android:src="@drawable/ic_google"
+                tools:ignore="ImageContrastCheck" />
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_background"
-            android:backgroundTint="@color/black"
-            android:layout_marginBottom="8dp"
-            android:padding="12dp"
-            android:gravity="center"
-            android:orientation="horizontal">
+        <!-- Create Account Button -->
+        <Button
+            android:id="@+id/bottomCreateAccountButton"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/create_account"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/primaryVeryDark"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="85dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/login_with"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:layout_marginStart="8dp"/>
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:contentDescription="@string/image_placeholder"
-                app:tint="@color/white"
-                android:layout_marginStart="5dp"
-                android:padding="2dp"
-                android:src="@drawable/ic_x"/>
-        </LinearLayout>
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/bottomCreateAccountButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/create_account"
-        android:textColor="@color/white"
-        android:backgroundTint="@color/primaryDark"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="16dp"/>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

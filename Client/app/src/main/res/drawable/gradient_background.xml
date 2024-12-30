@@ -3,5 +3,4 @@
         android:startColor="@color/primaryColor"
         android:endColor="@color/offWhite"
         android:angle="45" />
-    <corners android:bottomLeftRadius="32dp" android:bottomRightRadius="32dp"/>
 </shape>
