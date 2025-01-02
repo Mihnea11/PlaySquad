@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "D:\\Master\\Android App Development\\Play Squad\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\data\\roleseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\data\\roleseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\dto\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\dto\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,40 +19,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Program.cs",
-              "RelativeDocumentMoniker": "Server\\Program.cs",
-              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Program.cs",
-              "RelativeToolTip": "Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACwAAAAAAAAAAAAAAA==",
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "Server\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAwIEAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T14:57:23.463Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RoleSeeder.cs",
-              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Data\\RoleSeeder.cs",
-              "RelativeDocumentMoniker": "Server\\Data\\RoleSeeder.cs",
-              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Data\\RoleSeeder.cs",
-              "RelativeToolTip": "Server\\Data\\RoleSeeder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T15:01:44.215Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserResponse.cs",
-              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\DTO\\UserResponse.cs",
-              "RelativeDocumentMoniker": "Server\\DTO\\UserResponse.cs",
-              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\DTO\\UserResponse.cs",
-              "RelativeToolTip": "Server\\DTO\\UserResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-30T14:50:50.365Z",
+              "WhenOpened": "2025-01-02T12:18:15.66Z",
               "EditorCaption": ""
             }
           ]

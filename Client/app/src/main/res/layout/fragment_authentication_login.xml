@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    tools:context=".authentication.LoginFragment">
+    tools:context=".fragments.authentication.LoginFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -115,50 +115,62 @@
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Login Button -->
-            <Button
-                android:id="@+id/loginButton"
-                android:layout_width="250dp"
-                android:layout_height="48dp"
-                android:text="@string/login"
-                android:backgroundTint="@color/primaryColor"
-                android:textColor="@color/white"
-                android:layout_marginTop="16dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp" />
-        </LinearLayout>
-
-        <!-- Google Login Button -->
-        <LinearLayout
-            android:layout_width="400dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/fieldsContainer"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="32dp"
-            android:background="@drawable/button_background"
-            android:backgroundTint="@color/offWhite"
-            android:padding="10dp"
-            android:gravity="center"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
+            <!-- Login and Spinner Container -->
+            <LinearLayout
+                android:layout_width="400dp"
                 android:layout_height="wrap_content"
-                android:text="@string/login_with_google"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:layout_marginStart="8dp" />
+                android:orientation="vertical"
+                android:gravity="center"
+                android:layout_marginTop="16dp">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="5dp"
-                android:contentDescription="@string/image_placeholder"
-                android:src="@drawable/ic_google"
-                tools:ignore="ImageContrastCheck" />
+                <!-- Login Button -->
+                <Button
+                    android:id="@+id/loginButton"
+                    android:layout_width="250dp"
+                    android:layout_height="48dp"
+                    android:text="@string/login"
+                    android:backgroundTint="@color/primaryColor"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="8dp" />
+
+                <!-- Google Login Button -->
+                <LinearLayout
+                    android:id="@+id/googleLoginButton"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="@drawable/button_background"
+                    android:backgroundTint="@color/offWhite"
+                    android:padding="10dp"
+                    android:gravity="center"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/login_with_google"
+                        android:textColor="@color/black"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="8dp"
+                        android:contentDescription="@string/image_placeholder"
+                        android:src="@drawable/ic_google"
+                        tools:ignore="ImageContrastCheck" />
+                </LinearLayout>
+
+                <!-- Spinner -->
+                <ProgressBar
+                    android:id="@+id/loadingSpinner"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:visibility="gone"
+                    android:indeterminateTint="@color/accentColor"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="16dp" />
+            </LinearLayout>
         </LinearLayout>
 
         <!-- Create Account Button -->

@@ -7,7 +7,6 @@
         public string Name { get; set; }
         public string PictureUrl { get; set; }
         public string RoleName { get; set; }
-        public string GoogleId { get; set; }
 
         public UserResponse()
         {
@@ -16,7 +15,6 @@
             Name = string.Empty;
             PictureUrl = string.Empty;
             RoleName = string.Empty;
-            GoogleId = string.Empty;
         }
     }
 }
