@@ -7,25 +7,22 @@
 
     <fragment
         android:id="@+id/authenticationFragment"
-        android:name="com.example.client.authentication.AuthenticationFragment"
+        android:name="com.example.client.fragments.authentication.AuthenticationFragment"
         android:label="fragment_authentication"
         tools:layout="@layout/fragment_authentication" >
         <action
             android:id="@+id/action_authenticationFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
-        <action
-            android:id="@+id/action_authenticationFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
 
     </fragment>
     <fragment
         android:id="@+id/dashboardFragment"
-        android:name="com.example.client.Fragments.DashboardFragment"
+        android:name="com.example.client.fragments.DashboardFragment"
         android:label="fragment_dashboard"
         tools:layout="@layout/fragment_dashboard" />
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.client.Fragments.MainFragment"
+        android:name="com.example.client.fragments.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" >
         <action
@@ -35,9 +32,4 @@
             android:id="@+id/action_mainFragment_to_dashboardFragment"
             app:destination="@id/dashboardFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.example.client.Fragments.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" />
 </navigation>

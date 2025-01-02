@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Server.csproj": {}
+    "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Server.csproj": {}
   },
   "projects": {
-    "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Server.csproj": {
+    "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Server.csproj",
+        "projectUniqueName": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Server.csproj",
         "projectName": "Server",
-        "projectPath": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Server.csproj",
-        "packagesPath": "C:\\Users\\40741\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\obj\\",
+        "projectPath": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Server.csproj",
+        "packagesPath": "C:\\Users\\mihne\\.nuget\\packages\\",
+        "outputPath": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\40741\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\mihne\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -50,35 +50,13 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "AutoMapper": {
+            "BCrypt.Net-Next": {
               "target": "Package",
-              "version": "[13.0.1, )"
+              "version": "[4.0.3, )"
             },
-            "Dapper": {
+            "Google.Apis.Auth": {
               "target": "Package",
-              "version": "[2.1.35, )"
-            },
-            "DotNetEnv": {
-              "target": "Package",
-              "version": "[3.1.1, )"
-            },
-            "Microsoft.AspNetCore.JsonPatch": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
-              "target": "Package",
-              "version": "[8.0.11, )"
-            },
-            "Microsoft.EntityFrameworkCore": {
-              "target": "Package",
-              "version": "[9.0.0, )"
-            },
-            "Microsoft.EntityFrameworkCore.Design": {
-              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-              "suppressParent": "All",
-              "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[1.68.0, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -86,17 +64,13 @@
               "target": "Package",
               "version": "[9.0.0, )"
             },
-            "Npgsql": {
-              "target": "Package",
-              "version": "[9.0.1, )"
-            },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
-              "version": "[9.0.1, )"
+              "version": "[9.0.2, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[7.2.0, )"
             }
           },
           "imports": [
@@ -118,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -6,9 +6,20 @@
     android:id="@+id/mainFragmentLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondaryColor"
-    tools:context=".Fragments.MainFragment">
+    android:background="@drawable/gradient_background"
+    tools:context=".fragments.MainFragment">
 
+    <!-- Abstract Background Pattern -->
+    <ImageView
+        android:id="@+id/abstractBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/abstract_background"
+        android:alpha="0.5"
+        android:contentDescription="@string/background_image" />
+
+    <!-- Logo Container -->
     <androidx.cardview.widget.CardView
         android:id="@+id/roundedImageView"
         android:layout_width="0dp"
@@ -19,43 +30,60 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.45">
+        app:layout_constraintHeight_percent="0.25">
 
-        <ImageView
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/app_logo"
-            android:scaleType="centerCrop"
-            android:contentDescription="@string/app_logo_placeholder"/>
+            android:layout_height="match_parent">
+
+            <!-- Radial Gradient Background -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/gradient_background_radial"
+                android:scaleType="centerCrop"
+                android:contentDescription="@string/background_gradient" />
+
+            <!-- App Logo -->
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/app_logo"
+                android:scaleType="centerInside"
+                android:contentDescription="@string/app_logo_placeholder" />
+        </FrameLayout>
     </androidx.cardview.widget.CardView>
 
+    <!-- App Name -->
     <TextView
         android:id="@+id/appNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/app_name"
-        android:textColor="@color/primaryDark"
-        android:textSize="48sp"
+        android:textColor="@color/primaryVeryDark"
+        android:textSize="36sp"
         android:textStyle="bold"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/roundedImageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="12dp"/>
+        android:layout_marginTop="12dp" />
 
+    <!-- Loading Text -->
     <TextView
         android:id="@+id/loadingTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/loading_text"
-        android:textColor="@color/primaryDark"
+        android:textColor="@color/primaryVeryDark"
         android:textSize="16sp"
         android:gravity="center"
         app:layout_constraintTop_toBottomOf="@id/appNameTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="128dp"/>
+        android:layout_marginTop="128dp" />
 
+    <!-- Progress Bar -->
     <ProgressBar
         android:id="@+id/progressBar"
         android:layout_width="wrap_content"
@@ -66,5 +94,5 @@
         app:layout_constraintTop_toBottomOf="@id/loadingTextView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="8dp"/>
+        android:layout_marginTop="8dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
