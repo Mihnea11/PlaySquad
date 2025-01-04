@@ -125,5 +125,21 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.ValidationController",
+    "Method": "ValidateUser",
+    "RelativePath": "Validation/validate-user",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Server.Models.Requests.UserValidationRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   }
 ]

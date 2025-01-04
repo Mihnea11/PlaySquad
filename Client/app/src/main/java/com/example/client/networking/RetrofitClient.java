@@ -2,7 +2,6 @@ package com.example.client.networking;
 
 import android.annotation.SuppressLint;
 
-import java.security.cert.CertificateException;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
@@ -41,11 +40,11 @@ public class RetrofitClient {
                     new X509TrustManager() {
                         @SuppressLint("TrustAllX509TrustManager")
                         @Override
-                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {}
+                        public void checkClientTrusted(java.security.cert.X509Certificate[] chain, String authType) {}
 
                         @SuppressLint("TrustAllX509TrustManager")
                         @Override
-                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) throws CertificateException {}
+                        public void checkServerTrusted(java.security.cert.X509Certificate[] chain, String authType) {}
 
                         @Override
                         public java.security.cert.X509Certificate[] getAcceptedIssuers() {

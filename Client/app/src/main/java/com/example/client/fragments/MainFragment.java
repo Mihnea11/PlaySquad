@@ -1,9 +1,8 @@
 package com.example.client.fragments;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,12 +13,17 @@ import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.client.R;
+import com.example.client.networking.callbacks.AuthenticationCallback;
+import com.example.client.networking.responses.UserResponse;
+import com.example.client.networking.services.implementations.ValidationService;
+import com.google.gson.Gson;
 
 public class MainFragment extends Fragment {
 
-    private static final String CREDENTIALS_KEY = "user_credentials";
-    private static final String SHARED_PREFS_NAME = "app_prefs";
-    private static final int DELAY_MILLIS = 5000; // 5 seconds delay
+    private static final String USER_PREFS = "user_prefs";
+    private static final String USER_DATA_KEY = "user_data";
+
+    private ValidationService validationService;
 
     @Nullable
     @Override
@@ -31,23 +35,41 @@ public class MainFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Use a Handler to delay the navigation by 5 seconds
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            // Check for credentials and navigate accordingly
-            if (areCredentialsLoaded()) {
-                // Navigate to Dashboard if credentials exist
-                NavHostFragment.findNavController(this).navigate(R.id.action_mainFragment_to_dashboardFragment);
-            } else {
-                // Navigate to Authentication if no credentials
-                NavHostFragment.findNavController(this).navigate(R.id.action_mainFragment_to_authenticationFragment);
-            }
-        }, DELAY_MILLIS);
+        validationService = new ValidationService();
+
+        SharedPreferences sharedPreferences = requireContext().getSharedPreferences(USER_PREFS, Context.MODE_PRIVATE);
+        String userDataJson = sharedPreferences.getString(USER_DATA_KEY, null);
+
+        if (userDataJson == null) {
+            navigateToAuthentication();
+            return;
+        }
+
+        Gson gson = new Gson();
+        UserResponse savedUser = gson.fromJson(userDataJson, UserResponse.class);
+
+        validateUser(savedUser);
     }
 
-    // Method to check if credentials are loaded
-    private boolean areCredentialsLoaded() {
-        SharedPreferences sharedPreferences = requireContext().getSharedPreferences(SHARED_PREFS_NAME, getContext().MODE_PRIVATE);
-        String credentials = sharedPreferences.getString(CREDENTIALS_KEY, null);
-        return credentials != null;
+    private void validateUser(UserResponse savedUser) {
+        validationService.validateUser(savedUser.getEmail(), savedUser.getId(), savedUser.getName(), new AuthenticationCallback() {
+            @Override
+            public void onSuccess(UserResponse userResponse) {
+                navigateToDashboard();
+            }
+
+            @Override
+            public void onFailure(String errorMessage) {
+                navigateToAuthentication();
+            }
+        });
+    }
+
+    private void navigateToDashboard() {
+        NavHostFragment.findNavController(this).navigate(R.id.action_mainFragment_to_dashboardFragment);
+    }
+
+    private void navigateToAuthentication() {
+        NavHostFragment.findNavController(this).navigate(R.id.action_mainFragment_to_authenticationFragment);
     }
 }

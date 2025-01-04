@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Server.DTO;
 using Server.Models;
 using Server.Models.Entities;
 using Server.Models.Requests;
+using Server.Models.Responses;
 using Server.Services.Interfaces;
 
 namespace Server.Controllers

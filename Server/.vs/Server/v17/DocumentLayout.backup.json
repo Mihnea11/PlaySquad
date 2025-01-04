@@ -5,6 +5,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\models\\responses\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\models\\responses\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,8 +18,21 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Models\\Responses\\UserResponse.cs",
+              "RelativeDocumentMoniker": "Server\\Models\\Responses\\UserResponse.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Models\\Responses\\UserResponse.cs",
+              "RelativeToolTip": "Server\\Models\\Responses\\UserResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-04T16:29:59.553Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -24,9 +41,9 @@
               "RelativeDocumentMoniker": "Server\\Controllers\\AuthenticationController.cs",
               "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Controllers\\AuthenticationController.cs",
               "RelativeToolTip": "Server\\Controllers\\AuthenticationController.cs",
-              "ViewState": "AgIAAGgAAAAAAAAAAAAAwIEAAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-02T12:18:15.66Z",
+              "WhenOpened": "2025-01-04T16:24:57.168Z",
               "EditorCaption": ""
             }
           ]
