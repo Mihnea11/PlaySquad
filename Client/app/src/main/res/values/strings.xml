@@ -31,4 +31,9 @@
     <string name="join_community">Join our comunity!</string>
     <string name="username">Username</string>
     <string name="already_have_account">Already have an account? Login!</string>
+    <string name="home">Home</string>
+    <string name="search">Search</string>
+    <string name="add">Add</string>
+    <string name="seller">Seller</string>
+    <string name="profile">Profile</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.client.fragments;
+package com.example.client.fragments.user;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
