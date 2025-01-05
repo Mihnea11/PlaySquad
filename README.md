@@ -1,11 +1,32 @@
 # PlaySquad
 
--refacut pagina profil + adaugata functionalitatea de trecere la cont de seller
--create tabele pentru terenuri + lincare teren-seller (one to many)
--adaugat functionalitate cautare jucatori dupa nume sau dupa mail (preferabil mail)
--sistem de preteni (unui user ii apar activitatile create de alti user)
--vizualizare profil alti jucatori (de vazut cum)
--design pagina adaugare activitate + design pagina adaugare teren
--creare tabele pentru activitati
+### Functionalități implementate/refăcute:
 
-O bere rece
+1. **Refacut pagina profil**  
+   - Adăugat funcționalitatea de trecere la cont de seller.
+
+2. **Gestionare terenuri**  
+   - Creat tabele pentru terenuri.
+   - Lincat teren-seller (relație one-to-many).
+
+3. **Căutare jucători**  
+   - Adăugat funcționalitatea de căutare a jucătorilor:  
+     - După nume.  
+     - După mail (preferabil).
+
+4. **Sistem de prieteni**  
+   - Unui utilizator îi apar activitățile create de alți utilizatori din lista de prieteni.
+
+5. **Vizualizare profil alt jucător**  
+   - De investigat cum va fi implementat.
+
+6. **Design pagini noi**  
+   - Design pentru pagina de adăugare activitate.  
+   - Design pentru pagina de adăugare teren.
+
+7. **Gestionare activități**  
+   - Creat tabele pentru activități.
+
+---
+
+🍺 **O bere rece** 🍺
