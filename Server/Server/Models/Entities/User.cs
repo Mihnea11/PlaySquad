@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Data;
 using System.Text.Json.Serialization;
 
 namespace Server.Models.Entities
@@ -24,6 +23,18 @@ namespace Server.Models.Entities
         [JsonIgnore]
         public Role? Role { get; set; }
 
+        [JsonIgnore]
+        public ICollection<SoccerField>? OwnedFields { get; set; } // Terenuri detinute
+
+        [JsonIgnore]
+        public ICollection<Booking>? OwnedBookings { get; set; } // Booking-uri unde este creator
+
+        [JsonIgnore]
+        public ICollection<Booking>? RequestedBookings { get; set; } // Request-uri la booking-uri
+
+        [JsonIgnore]
+        public ICollection<Booking>? ApprovedBookings { get; set; } // Booking-uri unde este participant aprobat
+
         public User()
         {
             Id = 0;
@@ -33,6 +44,10 @@ namespace Server.Models.Entities
             Name = string.Empty;
             PictureUrl = string.Empty;
             RoleId = 0;
+            OwnedFields = new List<SoccerField>();
+            OwnedBookings = new List<Booking>();
+            RequestedBookings = new List<Booking>();
+            ApprovedBookings = new List<Booking>();
         }
     }
 }
