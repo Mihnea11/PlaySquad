@@ -42,6 +42,7 @@ namespace Server.Services.Implementations
 
         public async Task<Booking> CreateBookingAsync(Booking booking)
         {
+            await ValidateBookingAsync(booking);
             _dbContext.Bookings.Add(booking);
             await _dbContext.SaveChangesAsync();
             return booking;
@@ -49,21 +50,24 @@ namespace Server.Services.Implementations
 
         public async Task<Booking> UpdateBookingAsync(int id, Booking updatedBooking)
         {
-            var booking = await _dbContext.Bookings.FirstOrDefaultAsync(b => b.Id == id);
+            var existingBooking = await _dbContext.Bookings.FirstOrDefaultAsync(b => b.Id == id);
 
-            if (booking == null)
+            if (existingBooking == null)
             {
-                throw new Exception("Booking not found");
+                throw new Exception("Booking not found.");
             }
 
-            booking.Field = updatedBooking.Field;
-            booking.Creator = updatedBooking.Creator;
-            booking.WaitingList = updatedBooking.WaitingList;
-            booking.ApprovedParticipants = updatedBooking.ApprovedParticipants;
-            booking.MaxParticipants = updatedBooking.MaxParticipants;
+            await ValidateBookingAsync(updatedBooking, isUpdate: true);
+
+            existingBooking.Field = updatedBooking.Field;
+            existingBooking.Creator = updatedBooking.Creator;
+            existingBooking.WaitingList = updatedBooking.WaitingList;
+            existingBooking.ApprovedParticipants = updatedBooking.ApprovedParticipants;
+            existingBooking.MaxParticipants = updatedBooking.MaxParticipants;
 
             await _dbContext.SaveChangesAsync();
-            return booking;
+
+            return existingBooking;
         }
 
         public async Task<bool> DeleteBookingAsync(int id)
@@ -166,6 +170,32 @@ namespace Server.Services.Implementations
             booking.ApprovedParticipants.Remove(user);
             await _dbContext.SaveChangesAsync();
             return true;
+        }
+
+        private async Task ValidateBookingAsync(Booking booking, bool isUpdate = false)
+        {
+            var creator = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == booking.CreatorId);
+            if (creator == null)
+            {
+                throw new Exception("The specified creator does not exist.");
+            }
+
+            var field = await _dbContext.SoccerFields.FirstOrDefaultAsync(f => f.Id == booking.FieldId);
+            if (field == null)
+            {
+                throw new Exception("The specified field does not exist.");
+            }
+
+            _dbContext.Entry(creator).State = EntityState.Unchanged;
+            _dbContext.Entry(field).State = EntityState.Unchanged;
+
+            booking.Creator = creator;
+            booking.Field = field;
+
+            if (booking.MaxParticipants <= 0)
+            {
+                throw new Exception("MaxParticipants must be greater than 0.");
+            }
         }
     }
 }

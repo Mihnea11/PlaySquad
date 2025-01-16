@@ -1,43 +1,55 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
 namespace Server.Models.Entities
 {
     public class User
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [Required] 
+        [EmailAddress] 
         [MaxLength(255)]
         public string Email { get; set; }
+
+        [Required] 
+        [MinLength(8)]
         public string PasswordHash { get; set; }
 
-        [MaxLength(255)]
-        public string GoogleId { get; set; }
+        [MaxLength(255)] 
+        public string? GoogleId { get; set; }
 
-        [MaxLength(255)]
+        [Required] 
+        [MaxLength(255)] 
+        [MinLength(2)] 
         public string Name { get; set; }
-        public string PictureUrl { get; set; }
 
+        [Url]
+        public string? PictureUrl { get; set; }
+
+        [Required]
         public int RoleId { get; set; }
 
         [JsonIgnore]
         public Role? Role { get; set; }
 
         [JsonIgnore]
-        public ICollection<SoccerField>? OwnedFields { get; set; } // Terenuri detinute
+        public ICollection<SoccerField>? OwnedFields { get; set; } 
 
         [JsonIgnore]
-        public ICollection<Booking>? OwnedBookings { get; set; } // Booking-uri unde este creator
+        public ICollection<Booking>? OwnedBookings { get; set; } 
 
         [JsonIgnore]
-        public ICollection<Booking>? RequestedBookings { get; set; } // Request-uri la booking-uri
+        public ICollection<Booking>? RequestedBookings { get; set; } 
 
         [JsonIgnore]
-        public ICollection<Booking>? ApprovedBookings { get; set; } // Booking-uri unde este participant aprobat
+        public ICollection<Booking>? ApprovedBookings { get; set; } 
 
         public User()
         {
-            Id = 0;
             Email = string.Empty;
             PasswordHash = string.Empty;
             GoogleId = string.Empty;

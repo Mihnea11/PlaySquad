@@ -31,52 +31,37 @@ namespace Server.Services.Implementations
 
         public async Task<SoccerField> CreateSoccerFieldAsync(SoccerField soccerField)
         {
-            if (await _dbContext.SoccerFields.AnyAsync(sf => sf.Name == soccerField.Name))
-            {
-                throw new Exception("A soccer field with this name already exists.");
-            }
-
-            if (soccerField.OwnerId != 0)
-            {
-                var existingOwner = await _dbContext.Users.FindAsync(soccerField.OwnerId);
-                if (existingOwner == null)
-                {
-                    throw new Exception("The specified owner does not exist.");
-                }
-
-                _dbContext.Entry(existingOwner).State = EntityState.Unchanged;
-                soccerField.Owner = existingOwner;
-            }
+            await ValidateSoccerFieldAsync(soccerField);
             _dbContext.SoccerFields.Add(soccerField);
-
             await _dbContext.SaveChangesAsync();
-
             return soccerField;
         }
 
-        public async Task<SoccerField> UpdateSoccerFieldAsync(int id, SoccerField updatedSoccerField)
+        public async Task<SoccerField> UpdateSoccerFieldAsync(int id, SoccerField soccerField)
         {
-            var soccerField = await _dbContext.SoccerFields.FirstOrDefaultAsync(sf => sf.Id == id);
-            if (soccerField == null)
+            var existingSoccerField = await _dbContext.SoccerFields
+                .Include(sf => sf.Owner)
+                .FirstOrDefaultAsync(sf => sf.Id == id);
+
+            if (existingSoccerField == null)
             {
-                throw new Exception("Soccer field not found");
+                throw new Exception("The soccer field does not exist.");
             }
 
-            if (await _dbContext.SoccerFields.AnyAsync(sf => sf.Name == updatedSoccerField.Name && sf.Id != id))
-            {
-                throw new Exception("A soccer field with this name already exists.");
-            }
+            await ValidateSoccerFieldAsync(soccerField, isUpdate: true);
 
-            soccerField.Name = updatedSoccerField.Name;
-            soccerField.Description = updatedSoccerField.Description;
-            soccerField.Price = updatedSoccerField.Price;
-            soccerField.MinCapacity = updatedSoccerField.MinCapacity;
-            soccerField.MaxCapacity = updatedSoccerField.MaxCapacity;
-            soccerField.Indoor = updatedSoccerField.Indoor;
-            soccerField.Owner = updatedSoccerField.Owner;
+            existingSoccerField.Id = soccerField.Id;
+            existingSoccerField.Name = soccerField.Name;
+            existingSoccerField.Description = soccerField.Description;
+            existingSoccerField.Price = soccerField.Price;
+            existingSoccerField.MinCapacity = soccerField.MinCapacity;
+            existingSoccerField.MaxCapacity = soccerField.MaxCapacity;
+            existingSoccerField.Indoor = soccerField.Indoor;
+            existingSoccerField.Owner = soccerField.Owner;
 
             await _dbContext.SaveChangesAsync();
-            return soccerField;
+
+            return existingSoccerField;
         }
 
         public async Task<bool> DeleteSoccerFieldAsync(int id)
@@ -122,6 +107,31 @@ namespace Server.Services.Implementations
             soccerField.Bookings.Remove(booking);
             await _dbContext.SaveChangesAsync();
             return true;
+        }
+
+        private async Task ValidateSoccerFieldAsync(SoccerField soccerField, bool isUpdate = false)
+        {
+            if (!isUpdate && await _dbContext.SoccerFields.AnyAsync(sf => sf.Name == soccerField.Name))
+            {
+                throw new Exception("A soccer field with this name already exists.");
+            }
+
+            var existingOwner = await _dbContext.Users
+                .Include(u => u.Role)
+                .FirstOrDefaultAsync(u => u.Id == soccerField.OwnerId);
+
+            if (existingOwner == null)
+            {
+                throw new Exception("The specified owner does not exist.");
+            }
+
+            if (existingOwner.Role == null || existingOwner.Role.Name != "seller")
+            {
+                throw new Exception("The owner must have the role of 'Seller'.");
+            }
+
+            _dbContext.Entry(existingOwner).State = EntityState.Unchanged;
+            soccerField.Owner = existingOwner;
         }
     }
 }
