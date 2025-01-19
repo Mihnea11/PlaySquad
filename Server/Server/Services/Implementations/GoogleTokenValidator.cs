@@ -5,7 +5,7 @@ namespace Server.Services.Implementations
 {
     public class GoogleTokenValidator : IGoogleTokenValidator
     {
-        private const string CLIENT_ID = "804214446242-75de7rupc1qj1c3hvaaedrt4nhdjljke.apps.googleusercontent.com";
+        private const string CLIENT_ID = "804214446242-06p0rtt6f6p0gk8l0k1mrs854jtfv5vr.apps.googleusercontent.com";
 
         public async Task<GoogleJsonWebSignature.Payload> ValidateGoogleTokenAsync(string idToken)
         {

@@ -35,7 +35,7 @@ import com.google.android.gms.common.api.ApiException;
 
 public class LoginFragment extends Fragment {
     private static final String TAG = "LoginFragment";
-    private static final String SERVER_CLIENT_ID = "804214446242-75de7rupc1qj1c3hvaaedrt4nhdjljke.apps.googleusercontent.com";
+    private static final String SERVER_CLIENT_ID = "804214446242-06p0rtt6f6p0gk8l0k1mrs854jtfv5vr.apps.googleusercontent.com";
 
     private EditText emailField, passwordField;
     private ImageButton viewPasswordButton;

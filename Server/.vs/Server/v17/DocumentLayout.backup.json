@@ -1,17 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\",
+  "WorkspaceRootPath": "D:\\Master\\Android App Development\\Play Squad\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\controllers\\authenticationcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\services\\implementations\\googletokenvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\services\\implementations\\googletokenvalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\services\\implementations\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\services\\implementations\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\services\\implementations\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\models\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|d:\\master\\android app development\\play squad\\server\\server\\models\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\models\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -22,28 +42,92 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Booking.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Models\\Entities\\Booking.cs",
-              "RelativeDocumentMoniker": "Server\\Models\\Entities\\Booking.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Models\\Entities\\Booking.cs",
-              "RelativeToolTip": "Server\\Models\\Entities\\Booking.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAkwB8AAAAXAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Program.cs",
+              "RelativeDocumentMoniker": "Server\\Program.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Program.cs",
+              "RelativeToolTip": "Server\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T09:32:16.979Z",
+              "WhenOpened": "2025-01-19T23:50:45.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Server\\Data\\AppDbContext.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Server\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T23:50:31.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GoogleTokenValidator.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Services\\Implementations\\GoogleTokenValidator.cs",
+              "RelativeDocumentMoniker": "Server\\Services\\Implementations\\GoogleTokenValidator.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Services\\Implementations\\GoogleTokenValidator.cs",
+              "RelativeToolTip": "Server\\Services\\Implementations\\GoogleTokenValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T23:47:24.542Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\appsettings.json",
+              "RelativeDocumentMoniker": "Server\\appsettings.json",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\appsettings.json",
+              "RelativeToolTip": "Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-01-19T23:46:29.137Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthenticationController.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Controllers\\AuthenticationController.cs",
+              "RelativeDocumentMoniker": "Server\\Controllers\\AuthenticationController.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Controllers\\AuthenticationController.cs",
+              "RelativeToolTip": "Server\\Controllers\\AuthenticationController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAowDwAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T23:45:49.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Models\\Entities\\Booking.cs",
+              "RelativeDocumentMoniker": "Server\\Models\\Entities\\Booking.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Models\\Entities\\Booking.cs",
+              "RelativeToolTip": "Server\\Models\\Entities\\Booking.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwB8AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T09:32:16.979Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "BookingController.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Controllers\\BookingController.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Controllers\\BookingController.cs",
               "RelativeDocumentMoniker": "Server\\Controllers\\BookingController.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Controllers\\BookingController.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Controllers\\BookingController.cs",
               "RelativeToolTip": "Server\\Controllers\\BookingController.cs",
               "ViewState": "AgIAAPcAAAAAAAAAAAAcwHwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -52,16 +136,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "BookingService.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Services\\Implementations\\BookingService.cs",
+              "DocumentMoniker": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Services\\Implementations\\BookingService.cs",
               "RelativeDocumentMoniker": "Server\\Services\\Implementations\\BookingService.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Services\\Implementations\\BookingService.cs",
+              "ToolTip": "D:\\Master\\Android App Development\\Play Squad\\Server\\Server\\Services\\Implementations\\BookingService.cs",
               "RelativeToolTip": "Server\\Services\\Implementations\\BookingService.cs",
               "ViewState": "AgIAAPgAAAAAAAAAAAAuwAgBAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T09:29:47.308Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-19T09:29:47.308Z"
             }
           ]
         }
