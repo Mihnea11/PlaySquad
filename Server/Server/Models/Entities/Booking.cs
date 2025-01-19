@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text.Json.Serialization;
 
@@ -6,8 +7,8 @@ namespace Server.Models.Entities
 {
     public class Booking
     {
-        [Key] 
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required]
@@ -20,13 +21,15 @@ namespace Server.Models.Entities
         public User Creator { get; set; }
 
         [JsonIgnore]
-        public ICollection<User>? WaitingList { get; set; } 
+        public ICollection<User>? WaitingList { get; set; }
 
         [JsonIgnore]
-        public ICollection<User>? ApprovedParticipants { get; set; } 
+        public ICollection<User>? ApprovedParticipants { get; set; }
 
         [Range(1, 50)]
         public int MaxParticipants { get; set; }
+
+        public DateTime BookingDate { get; set; }
 
         public Booking()
         {
@@ -36,6 +39,7 @@ namespace Server.Models.Entities
             WaitingList = new List<User>();
             ApprovedParticipants = new List<User>();
             MaxParticipants = 1;
+            BookingDate = DateTime.Now;
         }
     }
 }

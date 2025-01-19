@@ -7,8 +7,12 @@
       "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\controllers\\bookingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\controllers\\soccerfieldcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\controllers\\soccerfieldcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\services\\implementations\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\services\\implementations\\bookingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|c:\\users\\40741\\desktop\\playsquad\\server\\server\\models\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A882A098-8D20-4E62-A1BE-E2C097DA4097}|Server\\Server.csproj|solutionrelative:server\\models\\entities\\booking.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,15 +26,15 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SoccerFieldController.cs",
-              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Controllers\\SoccerFieldController.cs",
-              "RelativeDocumentMoniker": "Server\\Controllers\\SoccerFieldController.cs",
-              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Controllers\\SoccerFieldController.cs",
-              "RelativeToolTip": "Server\\Controllers\\SoccerFieldController.cs",
-              "ViewState": "AgIAAMYAAAAAAAAAAAAowOwAAAAJAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "Booking.cs",
+              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Models\\Entities\\Booking.cs",
+              "RelativeDocumentMoniker": "Server\\Models\\Entities\\Booking.cs",
+              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Models\\Entities\\Booking.cs",
+              "RelativeToolTip": "Server\\Models\\Entities\\Booking.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwB8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-19T01:44:18.834Z",
+              "WhenOpened": "2025-01-19T09:32:16.979Z",
               "EditorCaption": ""
             },
             {
@@ -41,9 +45,22 @@
               "RelativeDocumentMoniker": "Server\\Controllers\\BookingController.cs",
               "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Controllers\\BookingController.cs",
               "RelativeToolTip": "Server\\Controllers\\BookingController.cs",
-              "ViewState": "AgIAAJ4AAAAAAAAAAAAmwK8AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAPcAAAAAAAAAAAAcwHwAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-18T10:29:52.906Z",
+              "WhenOpened": "2025-01-19T09:31:37.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "BookingService.cs",
+              "DocumentMoniker": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Services\\Implementations\\BookingService.cs",
+              "RelativeDocumentMoniker": "Server\\Services\\Implementations\\BookingService.cs",
+              "ToolTip": "C:\\Users\\40741\\Desktop\\PlaySquad\\Server\\Server\\Services\\Implementations\\BookingService.cs",
+              "RelativeToolTip": "Server\\Services\\Implementations\\BookingService.cs",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAuwAgBAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-19T09:29:47.308Z",
               "EditorCaption": ""
             }
           ]

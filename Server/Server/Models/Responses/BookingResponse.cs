@@ -1,4 +1,7 @@
-﻿namespace Server.Models.Responses
+﻿
+
+
+namespace Server.Models.Responses
 {
     public class BookingResponse
     {
@@ -7,11 +10,13 @@
         public string FieldName { get; set; }
         public UserResponse Creator { get; set; }
         public int MaxParticipants { get; set; }
+        public DateTime BookingDate { get; set; } 
 
         public BookingResponse()
         {
             FieldName = string.Empty;
             Creator = new UserResponse();
+            BookingDate = DateTime.Now; 
         }
     }
 }

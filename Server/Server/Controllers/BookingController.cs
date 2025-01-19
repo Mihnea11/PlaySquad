@@ -38,6 +38,7 @@ namespace Server.Controllers
                     Id = booking.Id,
                     FieldId = booking.FieldId,
                     FieldName = booking.Field.Name,
+                    BookingDate=booking.BookingDate,
                     Creator = new UserResponse
                     {
                         Id = booking.Field.Owner.Id,
@@ -74,6 +75,7 @@ namespace Server.Controllers
                     Id = booking.Id,
                     FieldId = booking.FieldId,
                     FieldName = booking.Field.Name,
+                    BookingDate=booking.BookingDate,
                     Creator = new UserResponse
                     {
                         Id = booking.Field.Owner.Id,
@@ -120,6 +122,7 @@ namespace Server.Controllers
                 {
                     FieldId = bookingRequest.FieldId,
                     CreatorId = bookingRequest.CreatorId,
+                    BookingDate=bookingRequest.BookingDate,
                     Creator=creator,
                     Field=field,
                     MaxParticipants = bookingRequest.MaxParticipants,

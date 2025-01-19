@@ -64,6 +64,7 @@ namespace Server.Services.Implementations
             existingBooking.WaitingList = updatedBooking.WaitingList;
             existingBooking.ApprovedParticipants = updatedBooking.ApprovedParticipants;
             existingBooking.MaxParticipants = updatedBooking.MaxParticipants;
+            existingBooking.BookingDate = updatedBooking.BookingDate;
 
             await _dbContext.SaveChangesAsync();
 
