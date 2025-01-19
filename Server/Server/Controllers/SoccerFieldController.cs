@@ -1,5 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Server.Models.Entities;
+using Server.Models.Requests;
+using Server.Models.Responses;
+using Server.Services.Implementations;
 using Server.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,9 +17,15 @@ namespace Server.Controllers
     {
         private readonly ISoccerFieldService _soccerFieldService;
 
-        public SoccerFieldController(ISoccerFieldService soccerFieldService)
+        private readonly IUserService _userService;
+
+        private readonly IBookingService _bookingService;
+
+        public SoccerFieldController(ISoccerFieldService soccerFieldService, IUserService userService, IBookingService bookingService)
         {
             _soccerFieldService = soccerFieldService;
+            _userService= userService;
+            _bookingService= bookingService;
         }
 
         [HttpGet]
@@ -24,7 +34,28 @@ namespace Server.Controllers
             try
             {
                 var soccerFields = await _soccerFieldService.GetAllSoccerFieldsAsync();
-                return Ok(soccerFields);
+
+                var soccerFieldResponses = soccerFields.Select(field => new SoccerFieldResponse
+                {
+                    Id = field.Id,
+                    Name = field.Name,
+                    Description = field.Description,
+                    PictureUrl = field.PictureUrl,
+                    Price = field.Price,
+                    MinCapacity = field.MinCapacity,
+                    MaxCapacity = field.MaxCapacity,
+                    Indoor = field.Indoor,
+                    Owner = new UserResponse
+                    {
+                        Id = field.Owner.Id,
+                        Email = field.Owner.Email,
+                        Name = field.Owner.Name,
+                        PictureUrl = field.Owner.PictureUrl,
+                        RoleName = field.Owner.Role?.Name
+                    }
+                }).ToList();
+
+                return Ok(soccerFieldResponses);
             }
             catch (Exception ex)
             {
@@ -38,7 +69,33 @@ namespace Server.Controllers
             try
             {
                 var soccerField = await _soccerFieldService.GetSoccerFieldByIdAsync(id);
-                return Ok(soccerField);
+
+                if (soccerField == null)
+                {
+                    return NotFound(new { Message = "Soccer field not found." });
+                }
+
+                var soccerFieldResponse = new SoccerFieldResponse
+                {
+                    Id = soccerField.Id,
+                    Name = soccerField.Name,
+                    Description = soccerField.Description,
+                    PictureUrl = soccerField.PictureUrl,
+                    Price = soccerField.Price,
+                    MinCapacity = soccerField.MinCapacity,
+                    MaxCapacity = soccerField.MaxCapacity,
+                    Indoor = soccerField.Indoor,
+                    Owner = new UserResponse
+                    {
+                        Id = soccerField.Owner.Id,
+                        Email = soccerField.Owner.Email,
+                        Name = soccerField.Owner.Name,
+                        PictureUrl = soccerField.Owner.PictureUrl,
+                        RoleName = soccerField.Owner.Role?.Name
+                    }
+                };
+
+                return Ok(soccerFieldResponse);
             }
             catch (Exception ex)
             {
@@ -47,12 +104,55 @@ namespace Server.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateSoccerField([FromBody] SoccerField soccerField)
+        public async Task<IActionResult> CreateSoccerField([FromBody] SoccerFieldRequest request)
         {
             try
             {
-                var createdSoccerField = await _soccerFieldService.CreateSoccerFieldAsync(soccerField);
-                return CreatedAtAction(nameof(GetSoccerFieldById), new { id = createdSoccerField.Id }, createdSoccerField);
+                if (request == null)
+                {
+                    return BadRequest(new { Message = "Request body cannot be null." });
+                }
+
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                if (request.OwnerId <= 0)
+                {
+                    return BadRequest(new { Message = "OwnerId is required and must be greater than 0." });
+                }
+
+                var owner = await _userService.GetUserByIdAsync(request.OwnerId);
+
+                if (owner == null)
+                {
+                    return NotFound(new { Message = "Owner not found." });
+                }
+
+                var soccerField = new SoccerField
+                {
+                    Name = request.Name,
+                    Description = request.Description,
+                    PictureUrl = request.PictureUrl,
+                    Price = request.Price,
+                    MinCapacity = request.MinCapacity,
+                    MaxCapacity = request.MaxCapacity,
+                    Indoor = request.Indoor,
+                    OwnerId = request.OwnerId,
+                    Owner = owner
+                };
+
+                await _soccerFieldService.CreateSoccerFieldAsync(soccerField);
+
+                var isAdded = await _userService.AddStadiumAsOwnerAsync(request.OwnerId, soccerField);
+
+                if (!isAdded)
+                {
+                    return BadRequest(new { Message = "Failed to associate soccer field with owner." });
+                }
+
+                return CreatedAtAction(nameof(GetSoccerFieldById), new { id = soccerField.Id }, soccerField);
             }
             catch (Exception ex)
             {
@@ -61,11 +161,55 @@ namespace Server.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateSoccerField(int id, [FromBody] SoccerField updatedSoccerField)
+        public async Task<IActionResult> UpdateSoccerField(int id, [FromBody] SoccerFieldRequest request)
         {
             try
             {
-                var soccerField = await _soccerFieldService.UpdateSoccerFieldAsync(id, updatedSoccerField);
+                if (!ModelState.IsValid)
+                {
+                    return BadRequest(ModelState);
+                }
+
+                var soccerField = await _soccerFieldService.GetSoccerFieldByIdAsync(id);
+
+                if (soccerField == null)
+                {
+                    return NotFound(new { Message = "Soccer field not found." });
+                }
+
+                var currentOwner = await _userService.GetUserByIdAsync(soccerField.OwnerId);
+
+                if (currentOwner == null)
+                {
+                    return NotFound(new { Message = "Current owner not found." });
+                }
+
+                var newOwner = await _userService.GetUserByIdAsync(request.OwnerId);
+
+                if (newOwner == null)
+                {
+                    return NotFound(new { Message = "New owner not found." });
+                }
+
+                soccerField.Name = request.Name;
+                soccerField.Description = request.Description;
+                soccerField.PictureUrl = request.PictureUrl;
+                soccerField.Price = request.Price;
+                soccerField.MinCapacity = request.MinCapacity;
+                soccerField.MaxCapacity = request.MaxCapacity;
+                soccerField.Indoor = request.Indoor;
+
+                if (soccerField.OwnerId != request.OwnerId)
+                {
+                    currentOwner.OwnedFields.Remove(soccerField);
+
+                    newOwner.OwnedFields.Add(soccerField);
+
+                    soccerField.OwnerId = request.OwnerId;
+                    soccerField.Owner = newOwner;
+                }
+                await _soccerFieldService.UpdateSoccerFieldAsync(soccerField.Id, soccerField);
+
                 return Ok(soccerField);
             }
             catch (Exception ex)
@@ -88,31 +232,34 @@ namespace Server.Controllers
             }
         }
 
-        [HttpPost("{soccerFieldId}/add-booking")]
-        public async Task<IActionResult> AddBookingToSoccerField(int soccerFieldId, [FromBody] Booking booking)
+        [HttpGet("{soccerFieldId}/bookings")]
+        public async Task<IActionResult> GetBookingsBySoccerFieldId(int soccerFieldId)
         {
             try
             {
-                await _soccerFieldService.AddBookingToSoccerFieldAsync(soccerFieldId, booking);
-                return Ok(new { Message = "Booking added to soccer field successfully." });
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(new { Message = ex.Message });
-            }
-        }
+                var bookings = await _soccerFieldService.GetBookingsBySoccerFieldIdAsync(soccerFieldId);
 
-        [HttpDelete("{soccerFieldId}/remove-booking/{bookingId}")]
-        public async Task<IActionResult> RemoveBookingFromSoccerField(int soccerFieldId, int bookingId)
-        {
-            try
-            {
-                await _soccerFieldService.RemoveBookingFromSoccerFieldAsync(soccerFieldId, bookingId);
-                return Ok(new { Message = "Booking removed from soccer field successfully." });
+                var response = bookings.Select(booking => new BookingResponse
+                {
+                    Id = booking.Id,
+                    FieldId = booking.FieldId,
+                    FieldName = booking.Field.Name,
+                    Creator = new UserResponse
+                    {
+                        Id = booking.Field.Owner.Id,
+                        Email = booking.Field.Owner.Email,
+                        Name = booking.Field.Owner.Name,
+                        PictureUrl = booking.Field.Owner.PictureUrl,
+                        RoleName = booking.Field.Owner.Role?.Name
+                    },
+                    MaxParticipants = booking.MaxParticipants
+                }).ToList();
+
+                return Ok(response);
             }
             catch (Exception ex)
             {
-                return BadRequest(new { Message = ex.Message });
+                return NotFound(new { Message = ex.Message });
             }
         }
     }

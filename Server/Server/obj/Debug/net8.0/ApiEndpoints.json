@@ -66,8 +66,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "booking",
-        "Type": "Server.Models.Entities.Booking",
+        "Name": "bookingRequest",
+        "Type": "Server.Models.Requests.BookingRequest",
         "IsRequired": true
       }
     ],
@@ -87,8 +87,8 @@
         "IsRequired": true
       },
       {
-        "Name": "user",
-        "Type": "Server.Models.Entities.User",
+        "Name": "userId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -108,8 +108,24 @@
         "IsRequired": true
       },
       {
-        "Name": "user",
-        "Type": "Server.Models.Entities.User",
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BookingController",
+    "Method": "GetApprovedParticipants",
+    "RelativePath": "Booking/{bookingId}/approved-participants",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -159,6 +175,22 @@
   },
   {
     "ContainingType": "Server.Controllers.BookingController",
+    "Method": "GetWaitingList",
+    "RelativePath": "Booking/{bookingId}/waiting-list",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "bookingId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.BookingController",
     "Method": "GetBookingById",
     "RelativePath": "Booking/{id}",
     "HttpMethod": "GET",
@@ -187,8 +219,8 @@
         "IsRequired": true
       },
       {
-        "Name": "updatedBooking",
-        "Type": "Server.Models.Entities.Booking",
+        "Name": "bookingRequest",
+        "Type": "Server.Models.Requests.BookingRequest",
         "IsRequired": true
       }
     ],
@@ -308,8 +340,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "soccerField",
-        "Type": "Server.Models.Entities.SoccerField",
+        "Name": "request",
+        "Type": "Server.Models.Requests.SoccerFieldRequest",
         "IsRequired": true
       }
     ],
@@ -345,8 +377,8 @@
         "IsRequired": true
       },
       {
-        "Name": "updatedSoccerField",
-        "Type": "Server.Models.Entities.SoccerField",
+        "Name": "request",
+        "Type": "Server.Models.Requests.SoccerFieldRequest",
         "IsRequired": true
       }
     ],
@@ -370,40 +402,14 @@
   },
   {
     "ContainingType": "Server.Controllers.SoccerFieldController",
-    "Method": "AddBookingToSoccerField",
-    "RelativePath": "SoccerField/{soccerFieldId}/add-booking",
-    "HttpMethod": "POST",
+    "Method": "GetBookingsBySoccerFieldId",
+    "RelativePath": "SoccerField/{soccerFieldId}/bookings",
+    "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
         "Name": "soccerFieldId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "booking",
-        "Type": "Server.Models.Entities.Booking",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "Server.Controllers.SoccerFieldController",
-    "Method": "RemoveBookingFromSoccerField",
-    "RelativePath": "SoccerField/{soccerFieldId}/remove-booking/{bookingId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "soccerFieldId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "bookingId",
         "Type": "System.Int32",
         "IsRequired": true
       }
@@ -505,6 +511,70 @@
       {
         "Name": "soccerField",
         "Type": "Server.Models.Entities.SoccerField",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetApprovedBookings",
+    "RelativePath": "User/{userId}/approved-bookings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetOwnedBookings",
+    "RelativePath": "User/{userId}/owned-bookings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetOwnedFields",
+    "RelativePath": "User/{userId}/owned-fields",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.UserController",
+    "Method": "GetRequestedBookings",
+    "RelativePath": "User/{userId}/requested-bookings",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],

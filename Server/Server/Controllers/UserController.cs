@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Server.Models.Entities;
+using Server.Models.Responses;
 using Server.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -98,6 +99,134 @@ namespace Server.Controllers
             catch (Exception ex)
             {
                 return BadRequest(new { Message = ex.Message });
+            }
+        }
+
+        [HttpGet("{userId}/owned-fields")]
+        public async Task<IActionResult> GetOwnedFields(int userId)
+        {
+            try
+            {
+                var fields = await _userService.GetOwnedFieldsAsync(userId);
+
+                var response = fields.Select(field => new SoccerFieldResponse
+                {
+                    Id = field.Id,
+                    Name = field.Name,
+                    Description = field.Description,
+                    PictureUrl = field.PictureUrl,
+                    Price = field.Price,
+                    MinCapacity = field.MinCapacity,
+                    MaxCapacity = field.MaxCapacity,
+                    Indoor = field.Indoor,
+                    Owner = new UserResponse
+                    {
+                        Id = field.Owner.Id,
+                        Email = field.Owner.Email,
+                        Name = field.Owner.Name,
+                        PictureUrl = field.Owner.PictureUrl,
+                        RoleName = field.Owner.Role?.Name
+                    }
+                }).ToList();
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
+
+        [HttpGet("{userId}/owned-bookings")]
+        public async Task<IActionResult> GetOwnedBookings(int userId)
+        {
+            try
+            {
+                var bookings = await _userService.GetOwnedBookingsAsync(userId);
+
+                var response = bookings.Select(booking => new BookingResponse
+                {
+                    Id = booking.Id,
+                    FieldId = booking.FieldId,
+                    FieldName = booking.Field.Name,
+                    Creator = new UserResponse
+                    {
+                        Id = booking.Field.Owner.Id,
+                        Email = booking.Field.Owner.Email,
+                        Name = booking.Field.Owner.Name,
+                        PictureUrl = booking.Field.Owner.PictureUrl,
+                        RoleName = booking.Field.Owner.Role?.Name
+                    },
+                    MaxParticipants = booking.MaxParticipants
+                }).ToList();
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
+
+        [HttpGet("{userId}/requested-bookings")]
+        public async Task<IActionResult> GetRequestedBookings(int userId)
+        {
+            try
+            {
+                var bookings = await _userService.GetRequestedBookingsAsync(userId);
+
+                var response = bookings.Select(booking => new BookingResponse
+                {
+                    Id = booking.Id,
+                    FieldId = booking.FieldId,
+                    FieldName = booking.Field.Name,
+                    Creator = new UserResponse
+                    {
+                        Id = booking.Field.Owner.Id,
+                        Email = booking.Field.Owner.Email,
+                        Name = booking.Field.Owner.Name,
+                        PictureUrl = booking.Field.Owner.PictureUrl,
+                        RoleName = booking.Field.Owner.Role?.Name
+                    },
+                    MaxParticipants = booking.MaxParticipants
+                }).ToList();
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
+            }
+        }
+
+        [HttpGet("{userId}/approved-bookings")]
+        public async Task<IActionResult> GetApprovedBookings(int userId)
+        {
+            try
+            {
+                var bookings = await _userService.GetApprovedBookingsAsync(userId);
+
+                var response = bookings.Select(booking => new BookingResponse
+                {
+                    Id = booking.Id,
+                    FieldId = booking.FieldId,
+                    FieldName = booking.Field.Name,
+                    Creator = new UserResponse
+                    {
+                        Id = booking.Field.Owner.Id,
+                        Email = booking.Field.Owner.Email,
+                        Name = booking.Field.Owner.Name,
+                        PictureUrl = booking.Field.Owner.PictureUrl,
+                        RoleName = booking.Field.Owner.Role?.Name
+                    },
+                    MaxParticipants = booking.MaxParticipants
+                }).ToList();
+
+                return Ok(response);
+            }
+            catch (Exception ex)
+            {
+                return NotFound(new { Message = ex.Message });
             }
         }
     }

@@ -123,86 +123,61 @@ namespace Server.Services.Implementations
             return true;
         }
 
-        public async Task<bool> AddBookingToWaitingListAsync(int userId, int bookingId)
+        public async Task<ICollection<SoccerField>> GetOwnedFieldsAsync(int userId)
         {
-            var booking = await _dbContext.Bookings.Include(b => b.WaitingList).FirstOrDefaultAsync(b => b.Id == bookingId);
-            if (booking == null)
-            {
-                throw new Exception("Booking not found");
-            }
+            var user = await _dbContext.Users
+                .Include(u => u.OwnedFields)
+                .FirstOrDefaultAsync(u => u.Id == userId);
 
-            var user = await _dbContext.Users.FirstOrDefaultAsync(u => u.Id == userId);
             if (user == null)
             {
-                throw new Exception("User not found");
+                throw new Exception("User not found.");
             }
 
-            booking.WaitingList.Add(user);
-            await _dbContext.SaveChangesAsync();
-            return true;
+            return user.OwnedFields ?? new List<SoccerField>();
         }
 
-        public async Task<bool> RemoveBookingFromWaitingListAsync(int userId, int bookingId)
+        public async Task<ICollection<Booking>> GetOwnedBookingsAsync(int userId)
         {
-            var booking = await _dbContext.Bookings.Include(b => b.WaitingList).FirstOrDefaultAsync(b => b.Id == bookingId);
-            if (booking == null)
-            {
-                throw new Exception("Booking not found");
-            }
+            var user = await _dbContext.Users
+                .Include(u => u.OwnedBookings)
+                .FirstOrDefaultAsync(u => u.Id == userId);
 
-            var user = booking.WaitingList.FirstOrDefault(u => u.Id == userId);
             if (user == null)
             {
-                throw new Exception("User not found in waiting list");
+                throw new Exception("User not found.");
             }
 
-            booking.WaitingList.Remove(user);
-            await _dbContext.SaveChangesAsync();
-            return true;
+            return user.OwnedBookings ?? new List<Booking>();
         }
 
-        public async Task<bool> AddBookingToApprovedListAsync(int userId, int bookingId)
+        public async Task<ICollection<Booking>> GetRequestedBookingsAsync(int userId)
         {
-            var booking = await _dbContext.Bookings.Include(b => b.ApprovedParticipants).Include(b => b.WaitingList).FirstOrDefaultAsync(b => b.Id == bookingId);
-            if (booking == null)
-            {
-                throw new Exception("Booking not found");
-            }
+            var user = await _dbContext.Users
+                .Include(u => u.RequestedBookings)
+                .FirstOrDefaultAsync(u => u.Id == userId);
 
-            var user = booking.WaitingList.FirstOrDefault(u => u.Id == userId);
             if (user == null)
             {
-                throw new Exception("User not found in waiting list");
+                throw new Exception("User not found.");
             }
 
-            if (booking.ApprovedParticipants.Count >= booking.MaxParticipants)
-            {
-                throw new Exception("Maximum participants reached");
-            }
-
-            booking.WaitingList.Remove(user);
-            booking.ApprovedParticipants.Add(user);
-            await _dbContext.SaveChangesAsync();
-            return true;
+            return user.RequestedBookings ?? new List<Booking>();
         }
 
-        public async Task<bool> RemoveBookingFromApprovedListAsync(int userId, int bookingId)
+        public async Task<ICollection<Booking>> GetApprovedBookingsAsync(int userId)
         {
-            var booking = await _dbContext.Bookings.Include(b => b.ApprovedParticipants).FirstOrDefaultAsync(b => b.Id == bookingId);
-            if (booking == null)
-            {
-                throw new Exception("Booking not found");
-            }
+            var user = await _dbContext.Users
+                .Include(u => u.ApprovedBookings)
+                .FirstOrDefaultAsync(u => u.Id == userId);
 
-            var user = booking.ApprovedParticipants.FirstOrDefault(u => u.Id == userId);
             if (user == null)
             {
-                throw new Exception("User not found in approved participants list");
+                throw new Exception("User not found.");
             }
 
-            booking.ApprovedParticipants.Remove(user);
-            await _dbContext.SaveChangesAsync();
-            return true;
+            return user.ApprovedBookings ?? new List<Booking>();
         }
+
     }
 }

@@ -23,7 +23,7 @@ namespace Server.Models.Entities
         public ICollection<User>? WaitingList { get; set; } 
 
         [JsonIgnore]
-        public ICollection<User>? ApprovedParticipants { get; set; } // Approved participants
+        public ICollection<User>? ApprovedParticipants { get; set; } 
 
         [Range(1, 50)]
         public int MaxParticipants { get; set; }

@@ -90,6 +90,19 @@ namespace Server.Services.Implementations
             return true;
         }
 
+        public async Task<ICollection<Booking>> GetBookingsBySoccerFieldIdAsync(int soccerFieldId)
+        {
+            var bookings = await _dbContext.Bookings
+                .Include(b => b.Field)               
+                .Include(b => b.Creator)            
+                .Include(b => b.WaitingList)        
+                .Include(b => b.ApprovedParticipants) 
+                .Where(b => b.Field.Id == soccerFieldId) 
+                .ToListAsync();
+
+            return bookings;
+        }
+
         public async Task<bool> RemoveBookingFromSoccerFieldAsync(int soccerFieldId, int bookingId)
         {
             var soccerField = await _dbContext.SoccerFields.Include(sf => sf.Bookings).FirstOrDefaultAsync(sf => sf.Id == soccerFieldId);

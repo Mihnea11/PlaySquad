@@ -11,5 +11,7 @@ namespace Server.Services.Interfaces
         Task<bool> DeleteSoccerFieldAsync(int id);
         Task<bool> AddBookingToSoccerFieldAsync(int soccerFieldId, Booking booking);
         Task<bool> RemoveBookingFromSoccerFieldAsync(int soccerFieldId, int bookingId);
+
+        Task<ICollection<Booking>> GetBookingsBySoccerFieldIdAsync(int soccerFieldId);
     }
 }

@@ -14,10 +14,9 @@ namespace Server.Services.Interfaces
         Task<bool> AddStadiumAsOwnerAsync(int userId, SoccerField soccerField);
         Task<bool> RemoveStadiumFromOwnerAsync(int userId, int soccerFieldId);
 
-        Task<bool> AddBookingToWaitingListAsync(int userId, int bookingId);
-        Task<bool> RemoveBookingFromWaitingListAsync(int userId, int bookingId);
-
-        Task<bool> AddBookingToApprovedListAsync(int userId, int bookingId);
-        Task<bool> RemoveBookingFromApprovedListAsync(int userId, int bookingId);
+        Task<ICollection<SoccerField>> GetOwnedFieldsAsync(int userId);
+        Task<ICollection<Booking>> GetOwnedBookingsAsync(int userId);
+        Task<ICollection<Booking>> GetRequestedBookingsAsync(int userId);
+        Task<ICollection<Booking>> GetApprovedBookingsAsync(int userId);
     }
 }
